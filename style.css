@@ -1,9 +1,75 @@
-h3 {
-    color: blue;
-    background-color: aquamarine;
-    text-align: center;
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
-h2 {
-    color: blue;
+body {
+    font-family: 'Pretendard-Regular';
+}
+
+.big4 {
+
+    display: inline;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 1;
+    margin-bottom: 1;
+    padding: 0;
+    width: 200px;
+    border: 0px solid white;
+    color: black;
+    background-color: rgb(67, 110, 119);;
+}
+.big4Effect button:hover{
+    background-color: black;
+    color: white;
+}
+
+.bigBoxes {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+#rotatingBooks {
+    height: 500px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color:lightgray;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+#SubTitle {
+    margin-bottom: 50px;
+}
+
+#oneSentenceReview {
+    border-left: 1px solid black;
+    border-Right: 1px solid black;
+    padding: 15px;
+}
+
+#basicBookInfo {
+    margin-left: 20px;
+}
+
+#buy {
+    border: white;
+    color: black;
+    background-color: white;
+    width: 100px;
+    border-radius: 100px;
+}
+
+#buyEffect button:hover {
+    background-color: black;
+    color: white;
 }
