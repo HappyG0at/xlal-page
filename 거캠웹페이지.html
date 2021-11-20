@@ -14,20 +14,13 @@
             font-style: normal;
         }
 
-        @import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-        @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
-            .nanumgothic * {
-            font-family: 'Nanum Gothic', sans-serif;
-            }
-        .nanumgothiccoding * {
-            font-family: 'NanumGothicCoding', monospace;
+        @font-face { src: url('https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css');
+            font-family: 'Nanum Gothic Coding', monospace;
         }
 
         body {
-            font-family: 'SpoqaHanSansNeo-Regular','Nanum Gothic', sans-serif;
+            font-family: 'SpoqaHanSansNeo-Regular', 'Nanum Gothic Coding', sans-serif;
             margin: 0px;
-
         }
 
 
@@ -45,30 +38,28 @@
             align-items: center;
         }
 
-        #container .name {
+        .name {
             justify-content: left;
             width: 223px;
             height: 45px;
-            font-size: xx-large;
-            font-family: 'nanumgothiccoding';
+            font-size: 30px;
+            font-family: 'Nanum Gothic Coding', monospace;
         }
 
         .five {
             flex: 1;
             text-align: center;
-            font-weight: 300;
-
+            font-size: 15px;
         }
 
         #info {
             justify-content: center;
             display: flex;
             flex-direction: row;
-            padding-left: 100px;
-            padding-right: 110px;
+            padding-left: 130px;
+            padding-right: 150px;
             width: 460px;
             height: 30px;
-            
         }
 
         #info div:hover {
@@ -116,8 +107,14 @@
             padding-bottom: 40px;
         }
 
+        #newTitle {
+            font-size: 26px;
+        }
+
         #asdf {
             text-align: center;
+            font-size: 14px;
+            color: rgb(40, 40, 40);
         }
 
         #three {
@@ -137,11 +134,16 @@
 
         .threetitle {
             margin-bottom: 5px;
+            font-size: 16px;
         }
 
         .threeinfo {
-            margin-bottom: 85px;
+            margin-bottom: 90px;
             margin-top: 5px;
+            font-size: 14px;
+        }
+        .look {
+            font-size: 12px;
         }
 
         .center {
@@ -188,7 +190,7 @@
     <div id="new">
         <div style="justify-content: center;">
             <center>
-                <div style="margin-bottom: 35px;">새로운 시대를 열어갈 다음 세대를 위한 새로운 학교</div>
+                <div style="margin-bottom: 35px;" id="newTitle"><strong>새로운 시대를 열어갈 다음 세대를 위한 새로운 학교</strong></div>
             </center>
 
             <div id="asdf">사단법인 교육실험실21의 거꾸로캠퍼스는 21세기 학습자를 위한 미래 역량 중심 교육을 제공하는 실험 학교입니다. <br>
@@ -199,19 +201,19 @@
     <!-- chungus3 -->
     <div id="three">
         <div class="threepigs">
-            <div class="threetitle">배움의 원칙</div>
+            <div class="threetitle"><strong>배움의 원칙</strong></div>
             <div class="threeinfo">거꾸로캠퍼스가 실현하는<br>21세기 배움의 원칙 아홉 가지</div>
-            <div>자세히보기 →</div>
+            <div class="look">자세히보기 →</div>
         </div>
         <div class="threepigs center">
-            <div class="threetitle">교육과정</div>
+            <div class="threetitle"><strong>교육과정</strong></div>
             <div class="threeinfo">거꾸로캠퍼스의 교육과정과<br>교육 프로그램에 대한 안내</div>
-            <div>자세히보기 →</div>
+            <div class="look">자세히보기 →</div>
         </div>
         <div class="threepigs">
-            <div class="threetitle">학교생활</div>
+            <div class="threetitle"><strong>학교생활</strong></div>
             <div class="threeinfo">거꾸로캠퍼스를 만들어가는<br>학생과 교사들의 이야기</div>
-            <div>자세히보기 →</div>
+            <div class="look">자세히보기 →</div>
         </div>
     </div>
 </body>
