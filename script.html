@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function check() {
+            // 지금 input에 입력된 값을 가져온다
+            const name = document.getElementById('pwd').value;
+            // 값을 alert로 출력
+            if (name === 'xlal') {
+                alert('welcome xlal');
+            } else if (name === '') {
+                alert('djqtek');
+            } else {
+                alert('get lost u imposter')
+            }
+        }
+    
+    </script>
+
+    <input type="text" width=200 id="pwd" placeholder="ur name sir">
+    <input type="button" value="check" onclick="check()">
+</body>
+
+</html>
