@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" width=200 id="inputName">
+    <input type="button" value="change to code" onclick="code()">
+    <div id="demo"></div>
+
+    <script>
+
+        var dict = {
+            "a": 247,
+            247: "a",
+            "b": 197,
+            197: "b",
+            "c": 925,
+            925: "c",
+            "d": 361,
+            361: "d",
+            "e": 204,
+            204: "e",
+            "f": 404,
+            404: "f",
+            "g": 130,
+            130: "g",
+            "h": 288,
+            288: "h",
+            "i": 555,
+            555: "i",
+            "j": 291,
+            291: "j",
+            "k": 359,
+            359: "k",
+            "l": 200,
+            200: "l",
+            "m": 433,
+            433: "m",
+            "n": 291,
+            291: "n",
+            "o": 343,
+            343: "o",
+            "p": 527,
+            527: "p",
+            "q": 635,
+            635: "q",
+            "r": 476,
+            476: "r",
+            "s": 120,
+            120: "s",
+            "t": 345,
+            345: "t",
+            "u": 375,
+            375: "u",
+            "v": 479,
+            479: "v",
+            "w": 614,
+            614: "w",
+            "x": 728,
+            728: "x",
+            "y": 949,
+            949: "y",
+            "z": 101,
+            101: "z",
+            " ": space,
+            space: " "
+        };
+
+
+        function code(key) {
+
+            console.log('execute code function');
+
+            // input : "hello"
+
+            var inputText = document.getElementById("inputName").value;
+            console.log(inputText);
+
+            // hello 라는 string을 한글자씩 slice
+
+            const string = inputText;
+            string.split('');
+            console.log(string.split(''));
+
+            // slice 해서 array 로 저장한다
+
+            var slicedArray = string.split('');
+            console.log(slicedArray);
+
+            // slicedArray = ['h', 'e', 'l', 'l', 'o']
+
+            // array의 개수 slicedArray.length = 5
+
+            slicedArray.length
+            console.log(slicedArray.length);
+
+            // var result = ""
+
+            var result = "";
+
+            // for i in 0...slicedArray.length-1 {  result += String(dict[slicedArray[i]])   }
+
+            var i = 0;
+
+            for (i = 0; i < slicedArray.length; i++) {
+                console.log(slicedArray[i]);
+                console.log(dict[slicedArray[i]])
+                result += String(dict[slicedArray[i]]);
+            }
+
+            console.log(result);
+
+            // output : result 
+
+            document.getElementById("demo").innerHTML += result
+
+            // return dict[key]
+
+        }
+
+    </script>
+</body>
+
+</html>
