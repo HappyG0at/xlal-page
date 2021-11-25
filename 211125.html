@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <input type="text" width=200 id="inputName" onkeyup="if(window.event.keycode == 13){code()}">
+    <input type="text" width=200 id="inputName" onkeydown = "if(event.keyCode == 13){code()}">
     <input type="button" value="change to code" onclick="code()">
 
     <div style="display: block;">
@@ -52,7 +52,6 @@
 
 
         function code() {
-
             document.getElementById("inputName").value.split('').length
 
             let slicedArray = document.getElementById("inputName").value.split('');
@@ -72,7 +71,9 @@
                 // slicedArray[0] = h // dict['h'] = 'l' // result = 'l'
             }
 
-            document.getElementById("demo").innerHTML += result + "<br />";
+            document.getElementById("demo").innerHTML += result + "<br />" + "<br />";
+
+            document.getElementById("inputName").value = "";
 
         }
 
