@@ -65,6 +65,7 @@
 
         #info div:hover {
             color: royalblue;
+
         }
 
         .last {
@@ -158,19 +159,19 @@
     <!-- menu -->
     <div id="infoSection">
         <div id="container">
-            <div class="name">
+            <div class="name" onmouseover=story1()>
                 거꾸로캠퍼스
             </div>
             <div id="info">
-                <div class="five">연구 원칙</div>
-                <div class="five">연구 과정</div>
-                <div class="five">연구 활동</div>
-                <div class="five">법인소개</div>
-                <div class="five last">거꾸로캠퍼스 소개</div>
+                <div class="five"onmouseover=story2()>연구 원칙</div>
+                <div class="five"onmouseover=story3()>연구 과정</div>
+                <div class="five"onmouseover=story4()>연구 활동</div>
+                <div class="five"onmouseover=story5()>법인소개</div>
+                <div class="five last"onmouseover=story6()>거꾸로캠퍼스 소개</div>
             </div>
             <div id="apply">
 
-                <button id="applyB">
+                <button id="applyB" onmouseover=story7()>
                     <i class="far fa-edit"></i> 입학 상담 및 지원
                 </button>
 
@@ -212,6 +213,31 @@
             <div class="look">자세히보기 →</div>
         </div>
     </div>
+    <script>
+
+        function story1() {
+            alert('this is')
+        }
+        function story2() {
+            alert('a story')
+        }
+        function story3() {
+            alert('of me')
+        }
+        function story4() {
+            alert('continuously')
+        }
+        function story5() {
+            alert('annoying')
+        }
+        function story6() {
+            alert('you :)')
+        }
+        function story7() {
+            alert('the end')
+        }
+
+    </script>
 </body>
 
 </html>
