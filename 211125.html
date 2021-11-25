@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 </head>
 
 <body>
-    <input type="text" width=200 id="inputName">
+    <input type="text" width=200 id="inputName" onkeyup="if(window.event.keycode == 13){code()}">
     <input type="button" value="change to code" onclick="code()">
 
     <div style="display: block;">
@@ -26,14 +26,12 @@
             "c": "b",
             "d": "w",
             "w": "d",
-            "f": "f",
-            "f": "f",
+            "f": "u",
+            "u": "f",
             "g": "k",
             "k": "g",
             "h": "l",
             "l": "h",
-            "k": "u",
-            "u": "k",
             "m": "x",
             "x": "m",
             "q": "v",
@@ -42,7 +40,7 @@
             "i": "r",
             "y": "j",
             "j": "y",
-            "z": "e",
+            "z": "e", // key : value 
             "e": "z",
             "n": "t",
             "t": "n",
@@ -53,58 +51,28 @@
         };
 
 
-        function code(key) {
+        function code() {
 
-            console.log('execute code function');
+            document.getElementById("inputName").value.split('').length
 
-            // input : "hello"
-
-            var inputText = document.getElementById("inputName").value;
-            // var inputText = document.getElementsByTagName(input[0]).value;
-            console.log(inputText);
-
-
-            // hello 라는 string을 한글자씩 slice
-
-            const string = inputText;
-            string.split('');
-            console.log(string.split(''));
-
-            // slice 해서 array 로 저장한다
-
-            let slicedArray = string.split('');
+            let slicedArray = document.getElementById("inputName").value.split('');
             console.log(slicedArray);
-
-            // slicedArray = ['h', 'e', 'l', 'l', 'o']
-
-            // array의 개수 slicedArray.length = 5
-
-            slicedArray.length
-            console.log(slicedArray.length);
-
-            // var result = ""
 
             let result = "";
 
-            // for i in 0...slicedArray.length-1 {  result += String(dict[slicedArray[i]])   }
-
             let i = "";
+            console.log(slicedArray);
 
             for (i = 0; i < slicedArray.length; i++) {
-                console.log(slicedArray[i]);
-                console.log(dict[slicedArray[i]])
+                console.log(i);  //0 
                 result += dict[slicedArray[i]];
+                console.log(slicedArray[i]);
+                console.log(dict[slicedArray[i]]);
+
+                // slicedArray[0] = h // dict['h'] = 'l' // result = 'l'
             }
 
-            console.log(result);
-
-            // output : result 
-
             document.getElementById("demo").innerHTML += result + "<br />";
-            
-
-
-            // return dict[key]
 
         }
 
