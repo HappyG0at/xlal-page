@@ -152,6 +152,9 @@
         .center {
             background-color: rgb(4, 18, 81)
         }
+        #main button:hover{
+            background-color: black;
+        }
     </style>
 </head>
 
@@ -163,11 +166,11 @@
                 거꾸로캠퍼스
             </div>
             <div id="info">
-                <div class="five"onmouseover=story2()>연구 원칙</div>
-                <div class="five"onmouseover=story3()>연구 과정</div>
-                <div class="five"onmouseover=story4()>연구 활동</div>
-                <div class="five"onmouseover=story5()>법인소개</div>
-                <div class="five last"onmouseover=story6()>거꾸로캠퍼스 소개</div>
+                <div class="five" onmouseover=story2()>연구 원칙</div>
+                <div class="five" onmouseover=story3()>연구 과정</div>
+                <div class="five" onmouseover=story4()>연구 활동</div>
+                <div class="five" onmouseover=story5()>법인소개</div>
+                <div class="five last" onmouseover=story6()>거꾸로캠퍼스 소개</div>
             </div>
             <div id="apply">
 
@@ -213,7 +216,15 @@
             <div class="look">자세히보기 →</div>
         </div>
     </div>
+    <button id="main" onclick="window.location.href='https://www.youtube.com/watch?v=wwYWSIecImA'">
+    </button>
     <script>
+
+        var div1 = document.createElement("button");
+        div1.style.width = "100px";
+        div1.style.height = "100px";
+        div1.style.color = "white";
+        div1.innerHTML = "Hello there:)";
 
         function story1() {
             alert('this is')
@@ -235,6 +246,7 @@
         }
         function story7() {
             alert('the end... There is hidden button in the page. Try to find it ')
+            document.getElementById("main").appendChild(div1);
         }
 
 
