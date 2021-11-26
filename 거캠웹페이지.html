@@ -152,7 +152,14 @@
         .center {
             background-color: rgb(4, 18, 81)
         }
-        #main button:hover{
+
+        #main {
+            color:white;
+            background-color:white;
+
+        }
+
+        #main div:hover {
             background-color: black;
         }
     </style>
@@ -216,19 +223,18 @@
             <div class="look">자세히보기 →</div>
         </div>
     </div>
-    <button id="main" onclick="window.location.href='https://www.youtube.com/watch?v=wwYWSIecImA'">
-    </button>
+    <div id="main" onclick="window.location.href='https://www.youtube.com/watch?v=JALAKvn9tSY&list=WL&index=8'">
+    </div>
     <script>
 
-        var div1 = document.createElement("button");
-        div1.style.width = "100px";
-        div1.style.height = "100px";
-        div1.style.color = "white";
+        var div1 = document.createElement("div");
+        div1.style.width="100px";
+        div1.style.height="100px";
         div1.innerHTML = "Hello there:)";
 
-        function story1() {
-            alert('this is')
-        }
+            function story1() {
+                alert('this is')
+            }
         function story2() {
             alert('a story')
         }
