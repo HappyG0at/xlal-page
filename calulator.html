@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: white;
+        }
+
+        .output {
+            background-color: black;
+            width: 400px;
+            height: 150px;
+            display: flex;
+            flex-direction: row-reverse;
+            color: white;
+            text-align: end;
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+        }
+        
+
+        #input {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 400px;
+        }
+
+        .display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #input>div {
+            background-color: gray;
+            width: 100px;
+            height: 100px;
+        }
+
+        #input :nth-child(4n) {
+            background-color: orange;
+        }
+
+        #input :nth-child(19) {
+            background-color: orange;
+        }
+
+        #input :nth-child(17) {
+            flex: 2
+        }
+    </style>
+</head>
+
+<body>
+    <input class="output" id="input1" placeholder="0">
+    
+    <div id="input">
+        <div class="display" onclick="_clear()">
+            <div class="things">AC</div>
+        </div>
+        <div class="display" onclick="reverse()">
+            <div class="things">+/-</div>
+        </div>
+        <div class="display" onclick="percentage()">
+            <div class="things">%</div>
+        </div>
+        <div class="display" onclick="operacionFunction('/')">
+            <div class="things">÷</div>
+        </div>
+        <div class="display" onclick="add(7)">
+            <div class="things">7</div>
+        </div>
+        <div class="display" onclick="add(8)">
+            <div class="things">8</div>
+        </div>
+        <div class="display" onclick="add(9)">
+            <div class="things">9</div>
+        </div>
+        <div class="display" onclick="operacionFunction('*')">
+            <div class="things">×</div>
+        </div>
+        <div class="display" onclick="add(4)">
+            <div class="things">4</div>
+        </div>
+        <div class="display" onclick="add(5)">
+            <div class="things">5</div>
+        </div>
+        <div class="display" onclick="add(6)">
+            <div class="things">6</div>
+        </div>
+        <div class="display" onclick="operacionFunction('-')">
+            <div class="things">−</div>
+        </div>
+        <div class="display" onclick="add(1)">
+            <div class="things">1</div>
+        </div>
+        <div class="display" onclick="add(2)">
+            <div class="things">2</div>
+        </div>
+        <div class="display" onclick="add(3)">
+            <div class="things">3</div>
+        </div>
+        <div class="display" onclick="operacionFunction('+')">
+            <div class="things">+</div>
+        </div>
+        <div class="display" onclick="add(0)">
+            <div class="things">0</div>
+        </div>
+        <div class="display" onclick="add('.')">
+            <div class="things">.</div>
+        </div>
+        <div class="display" onclick="equals()">
+            <div class="things">=</div>
+        </div>
+    </div>
+    <script>
+        let number = 0;
+        let operacion = '';
+        var input = document.getElementById('input1');
+
+        function add(num) {
+            input.value += num;
+        }
+        function operacionFunction(operador) {
+            operacion = operador;
+            number = input.value;
+            input.value = '';
+        }
+        function equals() {
+            input.value = eval(number + operacion + input.value);
+        }
+        function _clear() {
+            console.log(input.value)
+            if (input.value != '') {
+                input.value = '';
+            } else {
+                number = 0;
+                operacion = '';
+            }
+        }
+        function reverse() {
+            input.value *= -1
+        }
+        function percentage() {
+            input.value /= 100
+        }
+
+    </script>
+</body>
+
+</html>
