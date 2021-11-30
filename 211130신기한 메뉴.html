@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            background-color: aquamarine;
+            display: inline;
+            margin: .5em;
+        }
+
+        .menuActive {
+            background-color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="asdf">
+        <div class="menuThree">menu1</div>
+        <div class="menuThree">menu1</div>
+        <div class="menuThree">menu1</div>
+    </div>
+    <script>
+        var currentMenu;
+        var menuParent = document.getElementById('asdf')
+
+        function clickHandler(e) {
+            if (currentMenu) {
+                currentMenu.classList.remove('menuActive')
+            }
+            e.target.classList.add('menuActive')
+            currentMenu = e.target;
+        }
+
+        menuParent.addEventListener('click', clickHandler)
+
+    </script>
+</body>
+
+</html>
