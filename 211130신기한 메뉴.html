@@ -23,8 +23,8 @@
 <body>
     <div id="asdf">
         <div class="menuThree">menu1</div>
-        <div class="menuThree">menu1</div>
-        <div class="menuThree">menu1</div>
+        <div class="menuThree">menu2</div>
+        <div class="menuThree">menu3</div>
     </div>
     <script>
         var currentMenu;
@@ -34,8 +34,10 @@
             if (currentMenu) {
                 currentMenu.classList.remove('menuActive')
             }
+            console.log(currentMenu + 'to')
             e.target.classList.add('menuActive')
             currentMenu = e.target;
+            console.log(currentMenu)
         }
 
         menuParent.addEventListener('click', clickHandler)
