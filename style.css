@@ -11,23 +11,79 @@ body {
     font-family: 'Pretendard-Regular';
     margin: 0px;
 }
-
-
+#notMove {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 6vw;
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(77, 120, 129);
+    align-items: center;
+    justify-content:space-between;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, .5);
+}
+#title {
+    font-size: xx-large;
+}
+.info4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 10vw;
+}
+#mainInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 40vw;
+}
+.infohover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25%;
+    z-index: 1;
+}
+.fixed {
+    position: fixed;
+}
+.infohover:hover {
+    animation: hover .5s forwards;
+}
+@keyframes hover {
+    0% {
+        background-color: azure;
+        width: 0%;
+    }
+    100% {
+        background-color:brown;
+        width:100%;
+    }
+}
 .bigBoxes {
     border: 1px solid black;
-    margin: 10px;
-    
+    height: 30vw;    
 }
 
 #rotatingBooks {
-    height: 500px;
+    height: 43vw;
+    margin-top: 6vw;
     margin-left: 0px;
     margin-right: 0px;
     background-image: url(a1c06f28469a4bd9a72f65c49cc663cf.jpeg);
     background-size:111%;
     background-position: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 .container {
     display: flex;
     align-items: center;
