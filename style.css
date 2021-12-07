@@ -48,8 +48,8 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 25%;
-    z-index: 1;
+    width: 100%;
+    /* z-index: 1; */
 }
 .fixed {
     position: fixed;
@@ -63,7 +63,7 @@ body {
         width: 0%;
     }
     100% {
-        background-color:brown;
+        background-color:rgb(8, 74, 87);
         width:100%;
     }
 }
@@ -71,9 +71,46 @@ body {
     border: 1px solid black;
     height: 30vw;    
 }
+/* .container {
 
+} */
+#carousel {
+    width: 100%;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+}
+#carousel::-webkit-scrollbar {
+    display: none;
+}
+.next {
+    position: absolute;
+    top: 45%;
+    right: 20px;
+    color: rgb(eee);
+    font-size: xx-large;
+    cursor: pointer;
+}
+.prev {
+    position: absolute;
+    top: 45%;
+    left: 20px;
+    color: rgb(eee);
+    font-size: xx-large;
+    cursor: pointer;
+}
+.next:hover {
+    background-color: tomato;
+}
+#imageSlider {
+    width: 300%;
+    display: flex;
+    transition: all 0.5s;
+    flex-shrink: 0;
+}
 #rotatingBooks {
     height: 43vw;
+    width: 100vw;
     margin-top: 6vw;
     margin-left: 0px;
     margin-right: 0px;
@@ -83,15 +120,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    scroll-snap-align: center;
 }
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-    
-}
-
 #SubTitle {
     margin-bottom: 50px;
 }

@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-
-    </style>
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -48,13 +45,72 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div id="carousel">
+            <div id="imageSlider">
+                <div id="rotatingBooks">
+                    <img src="./71DMt113sML.jpg" width="300px;">
+                    <div id="basicBookInfo">
+                        <center>
+                            <h1>12 Rules for Life 1</h1>
+                            <h3 id="SubTitle">Sub Title</h3>
+                            <div id="oneSentenceReview">
+                                <h4>one sentence review</h4>
+                            </div>
+                            <div id="buyEffect">
+                                <button id="buy">
+                                    <h4>구매하기</h4>
+                                </button>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div id="rotatingBooks">
+                    <img src="./71DMt113sML.jpg" width="300px;">
+                    <div id="basicBookInfo">
+                        <center>
+                            <h1>12 Rules for Life 2</h1>
+                            <h3 id="SubTitle">Sub Title</h3>
+                            <div id="oneSentenceReview">
+                                <h4>one sentence review</h4>
+                            </div>
+                            <div id="buyEffect">
+                                <button id="buy">
+                                    <h4>구매하기</h4>
+                                </button>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div id="rotatingBooks">
+                    <img src="./71DMt113sML.jpg" width="300px;">
+                    <div id="basicBookInfo">
+                        <center>
+                            <h1>12 Rules for Life 3</h1>
+                            <h3 id="SubTitle">Sub Title</h3>
+                            <div id="oneSentenceReview">
+                                <h4>one sentence review</h4>
+                            </div>
+                            <div id="buyEffect">
+                                <button id="buy">
+                                    <h4>구매하기</h4>
+                                </button>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="next">right</div>
+            <div class="prev">left</div>
+        </div>
     </div>
-    <div class="bigBoxes" id="rotatingBooks">
-        <div class="container">
+
+
+    <!-- <div id="rotatingBooks">
             <img src="./71DMt113sML.jpg" width="300px;">
             <div id="basicBookInfo">
                 <center>
-                    <h1>Title</h1>
+                    <h1>12 Rules for Life</h1>
                     <h3 id="SubTitle">Sub Title</h3>
                     <div id="oneSentenceReview">
                         <h4>one sentence review</h4>
@@ -64,42 +120,10 @@
                             <h4>구매하기</h4>
                         </button>
                     </div>
-
                 </center>
-
             </div>
+        </div> -->
 
-
-        </div>
-
-    </div>
-    <!-- overflow -->
-    <!-- <div class="bigBoxes" id="rotatingBooks">
-        <div id="notImage">
-            <div class="container">
-                <img src="./71DMt113sML.jpg" width="300px;">
-                <div id="basicBookInfo">
-                    <center>
-                        <h1>Title</h1>
-                        <h3 id="SubTitle">Sub Title</h3>
-                        <div id="oneSentenceReview">
-                            <h4>one sentence review</h4>
-                        </div>
-                        <div id="buyEffect">
-                            <button id="buy">
-                                <h4>구매하기</h4>
-                            </button>
-                        </div>
-
-                    </center>
-
-                </div>
-
-
-            </div>
-        </div>
-
-    </div> -->
     <div class="bigBoxes">
         <h1>티미의 책방이란?</h1>
     </div>
@@ -112,7 +136,59 @@
     <div class="bigBoxes">
         <h1>About 티미</h1>
     </div>
+    <script>
+        var currentPage = 1;
+        var leftStep = 0;
+        var rightStep = 0;
+        var Step = 0;
 
+        let next = document.getElementsByClassName('next')[0]
+        let prev = document.getElementsByClassName('prev')[0]
+        let imageSlider = document.getElementById('imageSlider')
+
+        console.log(currentPage)
+
+        next.addEventListener('click', function () {
+            console.log("starts at " + currentPage)
+
+            if (currentPage < 3) {
+                Step -= 1440;
+            } else {
+                Step = 0;
+                // currentPage = 0;
+                console.log(currentPage)
+            }
+            console.log(Step)
+
+            imageSlider.style.transform = 'translate('+ Step +'px)';
+            if (currentPage < 3) {
+                currentPage += 1;
+            }
+            console.log("ends at " + currentPage)
+        })
+
+        prev.addEventListener('click', function () {
+            console.log("starts at " + currentPage)
+
+            if (currentPage > 1) {
+                 Step += 1440;
+            } else {
+                Step = -1440 * 2; 
+                currentPage = 3;
+            }
+            console.log(Step)
+
+            imageSlider.style.transform = 'translate('+ Step +'px)';
+            if (currentPage > 1) {
+                currentPage -= 1;
+            }
+            console.log("ends at " + currentPage)
+        })
+
+        setTimeout(() => {
+            imageSlider.style.transition = 'all 0.5s';
+        })
+    </script>
 </body>
 
 </html>
