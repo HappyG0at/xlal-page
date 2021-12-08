@@ -25,6 +25,7 @@ body {
     padding-left: 5vw;
     padding-right: 5vw;
     box-shadow: 0 5px 10px rgb(0, 0, 0, .5);
+    z-index: 1;
 }
 #title {
     font-size: xx-large;
@@ -35,6 +36,9 @@ body {
     justify-content: center;
     height: 100%;
     width: 10vw;
+}
+body a {
+    text-decoration: none;
 }
 #mainInfo {
     display: flex;
