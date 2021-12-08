@@ -37,8 +37,9 @@ body {
     height: 100%;
     width: 10vw;
 }
-body a {
+#notMove a {
     text-decoration: none;
+    color:bisque
 }
 #mainInfo {
     display: flex;
