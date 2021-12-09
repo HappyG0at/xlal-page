@@ -11,6 +11,10 @@ body {
     font-family: 'Pretendard-Regular';
     margin: 0px;
 }
+* {
+    text-decoration: none;
+    color:bisque
+}
 #notMove {
     position: fixed;
     top: 0px;
@@ -36,10 +40,6 @@ body {
     justify-content: center;
     height: 100%;
     width: 10vw;
-}
-#notMove a {
-    text-decoration: none;
-    color:bisque
 }
 #mainInfo {
     display: flex;
@@ -88,21 +88,32 @@ body {
 #carousel::-webkit-scrollbar {
     display: none;
 }
+.nextainer {
+    height: 5vw;
+    width: 5vw;
+}
 .next {
+    height: 5vw;
+    width: 5vw;
+    text-align: center;
     position: absolute;
     top: 45%;
     right: 20px;
-    color: rgb(eee);
     font-size: xx-large;
     cursor: pointer;
+}
+.next:after {
+    content: '\276F';
 }
 .prev {
     position: absolute;
     top: 45%;
     left: 20px;
-    color: rgb(eee);
     font-size: xx-large;
     cursor: pointer;
+}
+.prev:after {
+    content: '\276E';
 }
 .next:hover {
     background-color: tomato;
@@ -152,6 +163,7 @@ body {
 #buyEffect button:hover {
     background-color: black;
     color: white;
+    transition: .5s;
 }
 
 #menu {

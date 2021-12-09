@@ -35,7 +35,7 @@
 
     <body>
         <img class="book" src="./71DMt113sML.jpg" alt="로켓에 탑승한 일분이">
-        <div class="value">requestAnimationFrame</div>
+        <div class="value"></div>
 
         <script>
         	const book = document.querySelector('.book');
@@ -55,20 +55,20 @@
         			cancelAnimationFrame(rafId);
         		}
 
-                if (yPos > 50) {
+                if (yPos > 40) {
                     yPos += 2;
                 }
                 if (yPos > 200) {
                     yPos += 3;
                 }
-                if (yPos > 400) {
+                if (yPos > 500) {
                     yPos += 4;
                 }
         	}
 
         	render();
 
-        	window.addEventListener('click', () => {
+        	book.addEventListener('mouseover', () => {
         		cancelAnimationFrame(rafId);
         	});
         </script>

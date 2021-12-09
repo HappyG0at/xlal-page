@@ -18,28 +18,28 @@
             <div class="info4">
                 <div class="infohover">
                     <div class="fixed"><a href="#티미의 책방">
-                        티미의 책방이란
+                            티미의 책방이란
                     </div>
                 </div>
             </div>
             <div class="info4">
                 <div class="infohover">
                     <div class="fixed"><a href="#Already Read">
-                        Already Read
+                            Already Read
                     </div>
                 </div>
             </div>
             <div class="info4">
                 <div class="infohover">
                     <div class="fixed"><a href="#Yet to Read">
-                        Yet to Read
+                            Yet to Read
                     </div>
                 </div>
             </div>
             <div class="info4">
                 <div class="infohover">
                     <div class="fixed"><a href="#About 티미">
-                        About 티미
+                            About 티미
                     </div>
                 </div>
             </div>
@@ -100,8 +100,12 @@
                     </div>
                 </div>
             </div>
-            <div class="next">right</div>
-            <div class="prev">left</div>
+            <div class="nextainer">
+                <div class="next"></div>
+            </div>
+            <div class="pretainer">
+                <div class="prev"></div>
+            </div>
         </div>
     </div>
 
@@ -150,50 +154,46 @@
         console.log(currentPage)
 
         next.addEventListener('click', function () {
+
             console.log("starts at " + currentPage)
 
             if (currentPage < 3) {
-                Step -= 1440;
+                Step -= 100;
+                currentPage += 1;
             } else {
                 Step = 0;
-                currentPage = 0;
-                console.log(currentPage)
+                currentPage = 1;
             }
-            console.log(Step)
+            imageSlider.style.transform = 'translate(' + Step + 'vw)';
 
-            imageSlider.style.transform = 'translate('+ Step +'px)';
-            if (currentPage < 3) {
-                currentPage += 1;
-            }
             console.log("ends at " + currentPage)
         })
 
         prev.addEventListener('click', function () {
+
             console.log("starts at " + currentPage)
 
             if (currentPage > 1) {
-                 Step += 1440;
-            } else {
-                Step = -1440 * 2; 
-                currentPage = 3;
-                console.log("middle at " + currentPage)
-            }
-            console.log(Step)
-            console.log("middle at " + currentPage)
-
-            imageSlider.style.transform = 'translate('+ Step +'px)';
-            if (currentPage > 1) {
+                Step += 100;
                 currentPage -= 1;
-            } else if (currentPage = 1){
+            } else {
+                Step = -200;
                 currentPage = 3;
-                console.log("middle at " + currentPage)
             }
+            imageSlider.style.transform = 'translate(' + Step + 'vw)';
+
             console.log("ends at " + currentPage)
         })
 
-        setTimeout(() => {
-            imageSlider.style.transition = 'all 0.5s';
-        })
+        imageSlider.style.transition = 'all 0.5s';
+
+        function updateCurrPage() {
+            console.log('scrolled')
+            let left =  imageSlider.getBoundingClientRect;
+        }
+
+        imageSlider.addEventListener('scroll', updateCurrPage())
+
     </script>
 </body>
 
