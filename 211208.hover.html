@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.button {
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    div {
+      width: 1000px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+    .button {
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      /* text-align: center; */
+      font-size: 28px;
+      padding: 20px;
+      width: 200px;
+      height: 100px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
 
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
 
-.button:hover span {
-  padding-right: 25px;
-}
-.button:hover {
-  padding-right: 25px;
-  background-color: aqua;
-  color: #f4511e;
-  transition: .5s
-}
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-  transition: .5s
-}
-</style>
+    .button:hover span {
+      padding-right: 50px;
+    }
+
+    .button:hover {
+      width: 300px;
+      height: 200px;
+      padding-right: 25px;
+      background-color: aqua;
+      color: #f4511e;
+      transition: .5s
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+      transition: .5s
+    }
+  </style>
 </head>
+
 <body>
 
-<h2>Animated Button</h2>
+  <h2>Animated Button</h2>
 
-<button class="button"><span>Hover </span></button>
+  <div>
+    <button class="button"><span>Hover </span></button>
+    <button class="button"><span>Hover </span></button>
+    <button class="button"><span>Hover </span></button>
+  </div>
 
 </body>
-</html>
 
+</html>

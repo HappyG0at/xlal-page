@@ -205,7 +205,7 @@ body {
     background-color: rgb(62, 105, 114);
 }
 .BBWords {
-    margin: 100px 0px
+    margin: 80px 0px
 }
 .BBTitle {
     font-size: xx-large;
@@ -216,58 +216,45 @@ body {
     text-align: center;
 }
 #threeContainer {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-#threeContainer .three:nth-child(1){
-    background-color:rgb(185, 134, 71)
-}
-#threeContainer :nth-child(2){
-    background-color:rgb(161, 111, 49)
-}
-#threeContainer :nth-child(3){
-    background-color:rgb(185, 134, 71)
-}
-.three {
-    height: 20vw;
-    width: 20vw;
-    color:black;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: xx-large;
-    text-align: center;
+    gap: 40px;
+    height: 25vw;
 }
-.overLay{
-    display: hidden;
+.RAS {
+    background-color:rgb(185, 134, 71)
+}
+.DDIM {
+    background-color:rgb(161, 111, 49)
+}
+.RALP {
+    background-color:rgb(185, 134, 71);
+}
+.three {
+    width: 20vw;
+    height: 20vw;
+    display: flex;
     align-items: center;
     justify-content: center;
-    opacity:0.7;
+    transition: all .5s;
 }
-.RAS:hover > .overLay{
-    width:20vw;
-    height:20vw;
-    position:absolute;
-    background-color:#000;
-    padding: 40px 40px;
-    transition:.5s
+.three:hover {
+    width: 25vw;
+    height: 25vw;
+    background-color: rgba(38, 38, 38);
 }
-.DDIM:hover > .overLay{
-    width:20vw;
-    height:20vw;
-    position:absolute;
-    background-color:#000;
-    padding: 40px 40px;
-    transition:.5s
+.three:hover span {
+    padding-bottom: 15vw;
+    transition: .5s;
 }
-.RALP:hover > .overLay{
-    width:20vw;
-    height:20vw;
-    position:absolute;
-    background-color:#000;
-    padding: 40px 40px;
-    transition:.5s
+.three span {
+    display: inline-block;
+    position: relative;
+    transition: all .5s;
+    font-size: xx-large;
+    text-align: center;
+    
 }
 .Yettoread {
     background-color: rgb(62, 105, 114);
