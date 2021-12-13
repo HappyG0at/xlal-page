@@ -87,7 +87,6 @@ body {
     border: 1px solid black;
     height: 89vh;
     width: 100vw;
-    /* scroll-snap-align: center; */
     scroll-snap-align: end;
     box-sizing: border-box;
 }
@@ -111,8 +110,8 @@ body {
     font-size: xx-large;
     cursor: pointer;
 }
-.left::before {
-    content: '\276F';
+.next:after {
+    content:'\276F';
 }
 .prev {
     width: 5vw;
@@ -125,9 +124,9 @@ body {
 }
 .prev:after {
     content:'\276E';
-    padding-right: 30px;
 }
 .alert {
+    font-size: x-large;
     text-align: center;
     position: absolute;
     top: 81%;
@@ -136,44 +135,11 @@ body {
 }
 .right::after {
     content: '\21D2';
-    padding-left: 30px;
+    padding-left: 230px;
 }
-#carousel:hover > .alert:after{
-    animation: eyeCatcher 2s ease forwards;
-}
-@keyframes eyeCatcher {
-    0% {
-        padding-left: 0px;
-    }
-    50% {
-        padding-left: 20px;
-    }
-    75% {
-        padding-left: 10px;
-    }
-    100% {
-        padding-left: 20px;
-    }
-}
-.alert1 {
+.left::before {
     content: '\21D0';
-}
-#carousel:hover > .alert:before{
-    animation: eyeCatcher1 2s ease forwards;
-}
-@keyframes eyeCatcher {
-    0% {
-        padding-right: 0px;
-    }
-    50% {
-        padding-right: 20px;
-    }
-    75% {
-        padding-right: 10px;
-    }
-    100% {
-        padding-right: 20px;
-    }
+    padding-right: 230px;
 }
 #imageSlider {
     width: 300%;
@@ -215,7 +181,9 @@ body {
     width: 100px;
     border-radius: 100px;
 }
-
+h4 {
+    color: black;
+}
 #buyEffect button:hover {
     background-color: black;
     color: white;
@@ -292,13 +260,16 @@ body {
     transition: .5s;
 }
 .three span {
+    width: 20vw;
     display: inline-block;
     position: relative;
     transition: all .5s;
     font-size: xx-large;
     text-align: center;
-    
 }
+.three span:after {
+    content: '';
+} 
 .Yettoread {
     background-color: rgb(62, 105, 114);
 }
