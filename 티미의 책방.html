@@ -50,7 +50,7 @@
 
     <div id="carousel">
         <div id="imageSlider">
-            <div id="rotatingBooks">
+            <div id="rotatingBooks" class=" _1">
                 <img src="./71DMt113sML.jpg" width="300px;">
                 <div id="basicBookInfo">
                     <center>
@@ -67,7 +67,7 @@
                     </center>
                 </div>
             </div>
-            <div id="rotatingBooks">
+            <div id="rotatingBooks" class=" _2">
                 <img src="./71DMt113sML.jpg" width="300px;">
                 <div id="basicBookInfo">
                     <center>
@@ -84,7 +84,7 @@
                     </center>
                 </div>
             </div>
-            <div id="rotatingBooks">
+            <div id="rotatingBooks" class=" _3">
                 <img src="./71DMt113sML.jpg" width="300px;">
                 <div id="basicBookInfo">
                     <center>
@@ -102,12 +102,11 @@
                 </div>
             </div>
         </div>
-        <div class="nextainer">
-            <div class="next"></div>
-        </div>
-        <div class="pretainer">
-            <div class="prev"></div>
-        </div>
+        <div class="next"></div>
+        <div class="prev"></div>
+        <div class="alert left"></div>
+        <div class="alert center">Scroll Left or Right</div>
+        <div class="alert right"></div>
     </div>
 
 
@@ -158,45 +157,71 @@
     <div class="bigBoxes About티미">
         <div class="BBTitle">About 티미</div>
     </div>
-    <!-- </div> -->
     <script>
         var currentPage = 1;
-        var leftStep = 0;
-        var rightStep = 0;
         var Step = 0;
+
 
         let next = document.getElementsByClassName('next')[0]
         let prev = document.getElementsByClassName('prev')[0]
         let imageSlider = document.getElementById('imageSlider')
+        let carousel = document.getElementById('carousel')
 
-        console.log(currentPage)
+        console.log(Step)
+
+        carousel.addEventListener('scroll', () => {
+            console.log('scrolled')
+            let scrolled = carousel.scrollLeft
+            console.log(scrolled)
+
+            if (scrolled == 1389) {
+                Step = -100;
+                console.log(currentPage)
+                console.log(Step)
+            } else if (scrolled == 2778) {
+                Step = -200;
+                console.log(currentPage)
+                console.log(Step)
+            } else if (scrolled == 0) {
+                Step = 0;
+                console.log(currentPage)
+                console.log(Step)
+            }
+        })
 
         next.addEventListener('click', function () {
 
-            console.log("starts at " + currentPage)
+            console.log("starts at " + Step)
 
-            if (currentPage < 3) {
+            if (Step > -200) {
                 Step -= 100;
-                currentPage += 1;
+                console.log(Step)
+                // currentPage += 1;
             } else {
+                console.log('yes')
+                console.log(Step)
                 Step = 0;
-                currentPage = 1;
+                scrolled = 0
             }
             imageSlider.style.transform = 'translate(' + Step + 'vw)';
 
-            console.log("ends at " + currentPage)
+
+            console.log("ends at " + Step)
         })
 
         prev.addEventListener('click', function () {
 
             console.log("starts at " + currentPage)
+            currentPage;
 
-            if (currentPage > 1) {
+            if (Step < 0) {
                 Step += 100;
-                currentPage -= 1;
+                console.log(Step)
+                // currentPage -= 1;
             } else {
                 Step = -200;
-                currentPage = 3;
+                // currentPage = 3;
+                scrolled = 0
             }
             imageSlider.style.transform = 'translate(' + Step + 'vw)';
 
@@ -204,13 +229,6 @@
         })
 
         imageSlider.style.transition = 'all 0.5s';
-
-        function updateCurrPage() {
-            console.log('scrolled')
-            let left = imageSlider.getBoundingClientRect;
-        }
-
-        imageSlider.addEventListener('scroll', updateCurrPage())
 
     </script>
 </body>
