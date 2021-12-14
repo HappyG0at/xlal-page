@@ -10,38 +10,40 @@
 </head>
 <!-- <div class="test" style="height: 11vh;"></div> -->
 
-<body style="background-color: rgb(77, 120, 129); color:bisque ">
+<body style="background-color: rgb(77, 120, 129); color:bisque" id="XBMain">
     <!-- <div class="y-scroll"> -->
     <div id="notMove">
-        <div id="title">
-            티미의 책방
+        <div id="title"><a href="#XBMain">
+                티미의 책방
+            </a>
         </div>
         <div id="mainInfo">
             <div class="info4">
                 <div class="infohover">
-                    <div class="fixed"><a href="#티미의 책방">
-                            티미의 책방이란
+                    <div class="fixed"><a href="#xlalsBooks">
+                            티미의 책방이란</a>
                     </div>
                 </div>
             </div>
             <div class="info4">
                 <div class="infohover">
-                    <div class="fixed"><a href="#Already Read">
-                            Already Read
+                    <div class="fixed"><a href="#AlreadyRead">
+                            Already Read </a>
                     </div>
                 </div>
             </div>
             <div class="info4">
                 <div class="infohover">
-                    <div class="fixed"><a href="#Yet to Read">
-                            Yet to Read
+                    <div class="fixed"><a href="#YettoRead">
+                            Yet to Read</a>
                     </div>
                 </div>
             </div>
             <div class="info4">
                 <div class="infohover">
-                    <div class="fixed"><a href="#About 티미">
+                    <div class="fixed"><a href="#About티미">
                             About 티미
+                        </a>
                     </div>
                 </div>
             </div>
@@ -50,7 +52,7 @@
 
     <div id="carousel">
         <div id="imageSlider">
-            <div id="rotatingBooks" class=" _1">
+            <div id="rotatingBooks" class=" _2">
                 <img src="./71DMt113sML.jpg" width="300px;">
                 <div id="basicBookInfo">
                     <center>
@@ -131,42 +133,72 @@
             </div>
         </div> -->
 
-    <div class="bigBoxes 티미의책방">
+    <div class="bigBoxes" id="xlalsBooks">
         <div class="BBWords">
             <h1 class="BBTitle">티미의 책방이란?</h1>
-            <div id="bookRoomInfo">내가 읽은 책들을 보셔두는 장소이다. 책의 핵심을 분석하고 책에서 던지는 질문들에 대해 <br> 나만의 답변을 구성해보고 그럴 수 없다면 책이
+            <div class="bookRoomInfo">내가 읽은 책들을 보셔두는 장소이다. 책의 핵심을 분석하고 책에서 던지는 질문들에 대해 <br> 나만의 답변을 구성해보고 그럴 수 없다면 책이
                 제시하는 질문에
                 대한 탐구를 위한 책방이다.</div>
         </div>
         <div id="threeContainer">
             <div class="three RAS">
                 <span>Reviews and Summaries</span>
+                <div class="hiddenContent">
+                </div>
             </div>
             <div class="three DDIM">
                 <span>Deep Dive into Meaning</span>
                 <div class="hiddenContent">
-                    책을 읽고
                 </div>
             </div>
             <div class="three RALP">
                 <span>Reading and Learning Platform</span>
                 <div class="hiddenContent">
-                    책을 읽고
                 </div>
             </div>
         </div>
     </div>
-    <div class="bigBoxes AlreadyRead">
-        <div class="BBTitle">Already Read</div>
+    <div class="bigBoxes" id="AlreadyRead">
+        <div class="BBWords">
+            <h1 class="BBTitle">Already Read</h1>
+            <div class="bookRoomInfo">내가 읽은 책들을 보셔두는 장소이다. 책의 핵심을 분석하고 책에서 던지는 질문들에 대해 <br> 나만의 답변을 구성해보고 그럴 수 없다면 책이
+                제시하는 질문에
+                대한 탐구를 위한 책방이다.</div>
+        </div>
+        <div id="bookList">
+            <div class="bookSection">
+                <div class="greyBackground"></div>
+                <div class="ARBookTitle">something something something</div>
+            </div>
+            <div class="bookSection">
+                <div class="greyBackground"></div>
+                <div class="ARBookTitle">something something something</div>
+            </div>
+            <div class="bookSection">
+                <div class="greyBackground"></div>
+                <div class="ARBookTitle">something something something</div>
+            </div>
+            <div class="bookSection">
+                <div class="greyBackground"></div>
+                <div class="ARBookTitle">something something something</div>
+            </div>
+            <div class="bookSection">
+                <div class="greyBackground"></div>
+                <div class="ARBookTitle">something something something</div>
+            </div>
+            <div class="bookSection">
+                <div class="greyBackground"></div>
+                <div class="ARBookTitle">something something something</div>
+            </div>
+        </div>
     </div>
-    <div class="bigBoxes Yettoread">
+    <div class="bigBoxes" id="YettoRead">
         <div class="BBTitle">Yet to Read</div>
     </div>
-    <div class="bigBoxes About티미">
+    <div class="bigBoxes" id="About티미">
         <div class="BBTitle">About 티미</div>
     </div>
     <script>
-        var currentPage = 1;
         var Step = 0;
 
 
@@ -181,6 +213,10 @@
             console.log('scrolled')
             let scrolled = carousel.scrollLeft
             console.log(scrolled)
+
+            document.getElementsByClassName('alert')[0].classList.add('hidden')
+            document.getElementsByClassName('alert')[1].classList.add('hidden')
+            document.getElementsByClassName('alert')[2].classList.add('hidden')
 
             if (scrolled == 1389) {
                 Step = -100;
@@ -204,7 +240,6 @@
             if (Step > -200) {
                 Step -= 100;
                 console.log(Step)
-                // currentPage += 1;
             } else {
                 console.log('yes')
                 console.log(Step)
@@ -225,10 +260,8 @@
             if (Step < 0) {
                 Step += 100;
                 console.log(Step)
-                // currentPage -= 1;
             } else {
                 Step = -200;
-                // currentPage = 3;
                 scrolled = 0
             }
             imageSlider.style.transform = 'translate(' + Step + 'vw)';
@@ -237,6 +270,8 @@
         })
 
         imageSlider.style.transition = 'all 0.5s';
+
+        
 
     </script>
 </body>

@@ -12,13 +12,6 @@ body {
     margin: 0px;
     scroll-snap-type: y mandatory;
 }
-/* .y-scroll {
-    scroll-snap-type: y mandatory;
-    height: 89vh;
-    width: 100vw;
-    overflow-y:auto;
-
-} */
 .y-scroll::-webkit-scrollbar {
     display: none;
 }
@@ -96,7 +89,7 @@ body {
     overflow-x:auto;
     scroll-snap-type: x mandatory;
     display: flex;
-    scroll-snap-align:start end;
+    scroll-snap-align:center;
 }
 #carousel::-webkit-scrollbar {
     display: none;
@@ -132,6 +125,18 @@ body {
     top: 81%;
     right: 50%;
     transform: translate(50%, 50%);
+}
+.hidden {
+    animation: _hide 1s forwards;
+}
+@keyframes _hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
 }
 .right::after {
     content: '\21D2';
@@ -172,6 +177,7 @@ body {
 
 #basicBookInfo {
     margin-left: 20px;
+    width: 20vw;
 }
 
 #buy {
@@ -181,7 +187,7 @@ body {
     width: 100px;
     border-radius: 100px;
 }
-h4 {
+#buy h4 {
     color: black;
 }
 #buyEffect button:hover {
@@ -212,18 +218,18 @@ h4 {
     margin: 0px;
     font-size: 20px;
 }
-.티미의책방 {
+#xlalsBooks {
     background-color: rgb(62, 105, 114);
 }
 .BBWords {
-    margin: 80px 0px
+    margin: 7vw 0px
 }
 .BBTitle {
     font-size: xx-large;
     margin-bottom: 30px;
     text-align: center;
 }
-#bookRoomInfo {
+.bookRoomInfo {
     text-align: center;
 }
 #threeContainer {
@@ -246,7 +252,8 @@ h4 {
     width: 20vw;
     height: 20vw;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items:center;
     justify-content: center;
     transition: all .5s;
 }
@@ -255,21 +262,62 @@ h4 {
     height: 25vw;
     background-color: rgba(38, 38, 38);
 }
-.three:hover span {
-    padding-bottom: 15vw;
-    transition: .5s;
-}
 .three span {
     width: 20vw;
     display: inline-block;
     position: relative;
-    transition: all .5s;
+    transition: .5s;
     font-size: xx-large;
     text-align: center;
 }
-.three span:after {
-    content: '';
-} 
-.Yettoread {
+.hiddenContent {
+    text-align: center;
+    width: 20vw;
+    opacity: 0;
+    transition: all .5s;
+}
+.three:hover .hiddenContent {
+    margin-top: 3vw;
+    opacity: 1;
+    transition: all .5s;
+}
+.three:hover .hiddenContent::after {
+    content: 'loremfjdisljf d jfdisj foejoi fndios fnoeiwnf ineouiwne fneow nfenwiojf d fjeow cnjdnviuodsucndosanioe ij j  fjoiejwc ';
+    transition: all .5s;
+}
+#AlreadyRead .BBWords {
+    margin: 20px 0px;
+    width: 100%;
+}
+#AlreadyRead .BBTitle {
+    font-size: xx-large;
+    margin: 20px 0px 30px 0px;
+}
+#bookList {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vw;
+    gap: 4vw;
+    background-color: mediumturquoise;
+}
+.bookSection {
+    width: 25vw;
+    height: 15vw;
+    background-color:rgb(47, 77, 83);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.greyBackground {
+    background-color: gray;
+    width: 40%;
+    height: 100%;
+}
+#Yettoread {
     background-color: rgb(62, 105, 114);
 }
