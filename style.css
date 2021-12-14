@@ -6,9 +6,15 @@
     font-style: normal;
     
 }
+@font-face {
+    font-family: 'KHNPHD';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KHNPHD.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
-    font-family: 'Pretendard-Regular';
+    font-family: 'KHNPHD';
     margin: 0px;
     scroll-snap-type: y mandatory;
 }
@@ -37,6 +43,14 @@ body {
 }
 #title {
     font-size: xx-large;
+}
+a {
+    display: flex;
+    align-items: center;
+}
+#logo {
+    width: 3.5vw;
+    margin-right: .3em;
 }
 .info4 {
     display: flex;
