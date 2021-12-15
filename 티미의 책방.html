@@ -167,9 +167,18 @@
         </div>
         <div id="bookList">
             <div class="bookSection">
+<<<<<<< HEAD
                 <div class="cube">
                     <div class="frontPage"></div>
                     <div class="secondPage"></div>
+=======
+                <div class="frontPage">
+                    <div class="greyBackground"></div>
+                    <div class="ARBookTitle">12 Rules for Life</div>
+                </div>
+                <div class="secondPage">
+                    
+>>>>>>> parent of a091041 (rnt)
                 </div>
             </div>
             <!-- <div class="bookSection">
@@ -272,6 +281,13 @@
         })
 
         imageSlider.style.transition = 'all 0.5s';
+
+        let bookSection = document.getElementsByClassName('bookSection')[0]
+
+        bookSection.addEventListener('click', () => {
+            bookSection.classList.add('hover')
+            console.log('good')
+        })
 
     </script>
 </body>
