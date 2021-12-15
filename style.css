@@ -208,20 +208,20 @@ a {
     width: 20vw;
 }
 
-#buy {
-    border: white;
+#buyEffect {
+    height: 3vw;
+    width: 100px;
     color: black;
     background-color: white;
-    width: 100px;
     border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
 }
-#buy h4 {
-    color: black;
-}
-#buyEffect button:hover {
-    background-color: black;
-    color: white;
-    /* transition: .5s; */
+#buyEffect:hover {
+    background-color: rgb(51, 48, 48);
+    color: bisque; 
 }
 
 #menu {
@@ -340,88 +340,137 @@ a {
     flex-wrap:wrap;
     align-items: center;
     justify-content: center;
-    /* display: grid;
-    grid-template-columns: 25vw 25vw 25vw;
-    align-items: center;
-    justify-content: center; */
-    margin-top: 4vw;
-    gap: 4vw;
+    margin-top: 3vw;
+    gap: 6vw;
+    row-gap: 2vw;
     position: relative;
+    padding: 0px 50px;
 }
 .bookSection {
-    width: 25vw;
+    width: 20vw;
     height: 15vw;
-    /* background-color:rgb(47, 77, 83); */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    animation: hovering 1s ease-out forwards alternate;
 }
-.bookSection:hover {
-     animation: hovering 1s ease forwards;
+.bookSection:hover .cube {
+    transform: translate(50%, 0%) rotateY(90deg);
 }
-
-.hover {
-    animation: hovering 1s ease forwards;
-}
-@keyframes hovering {
-    0% {
-        width: 25vw;
-    }
-    50% {
-        width: 30vw;
-    }
-    100% {
-        width: 25vw;
-    }
+.cube {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: -10px 0px 10px -5px rgba(0,0,0,0.75);
 }
 .frontPage {
     width: 100%;
     height: 100%;
-    display: inline-flex;
+    display: flex;
+    align-items: flex;
+    justify-content: center;
+    align-items: center;
+    animation: frontPage 1s ease-out forwards alternate;
+    background-color:dimgray;
+    /* box-shadow: black 0px 0px 10px 10px inset;
+    background-image: url(./KakaoTalk_Image_2021-12-14-14-11-33.jpeg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 0% 50%; */
+}
+.BCC {
+    height: 100%;
+    width: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: #101010; */
 }
-.greyBackground {
-    background-color: gray;
-    width: 50%;
-    height: 100%;
+.bookCover1 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./12Rulesforlife.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover2 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./카라마조프\ 가의\ 형제등.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover3 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./오만과\ 편견.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover4 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./하버드.jpeg);
+    /* background-image: url(./오만과\ 편견.jpeg); */
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover5 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./와칭.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover6 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./인생\ 우화.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
 }
 .ARBookTitle {
     width: 50%;
 }
-.bookSection:hover > .frontPage{
-    animation: frontPage 1s ease forwards;
-}
-@keyframes frontPage {
-    0% {
-        width: 100%;
-    }
-    /* 50% {
-        width: 50%;
-    } */
-    100% {
-        width: 0vw;
-    }
-}
 .secondPage {
-    width: 0%;
-    height: 15vw;
-    background-color:blueviolet;
+    height: 100%;
+    background-color:rgb(99, 136, 150);
+
+    transform: translate(0%, -100%) rotateY(-90deg);
+    transform-origin: right;
+    background-size: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
 }
-.bookSection:hover > .secondPage {
-    animation: secondPage 1s ease forwards;
+.thirdPage {
+    height: 100%;
+    background-color:lightcoral;
+
+    transform: translate(-37.5%, -275%) 
+    /* rotateX(-90deg)  */
+    rotate(-90deg);
+    transform-origin: top;
+    background-size: 100%;
 }
-@keyframes secondPage {
-    0% {
-        width: 0;
-    }
-    /* 50% {
-        width: 50%;
-    } */
-    100% {
-        width: 100%;
-    }
+.cubeInfo {
+    width: 90%;
 }
 #Yettoread {
     background-color: rgb(62, 105, 114);
