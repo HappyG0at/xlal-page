@@ -356,24 +356,6 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
-<<<<<<< HEAD
-    animation: hovering 1s ease-out forwards alternate;
-
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    /* overflow: hidden; */
-    
-}
-.cube,.cube div {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease-in-out;
-=======
 }
 .bookSection:hover {
      animation: hovering 1s ease forwards;
@@ -392,7 +374,6 @@ a {
     100% {
         width: 25vw;
     }
->>>>>>> parent of a091041 (rnt)
 }
 .frontPage {
     width: 100%;
@@ -400,16 +381,7 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-    animation: frontPage 1s ease-out forwards alternate;
-    background-color: darkgray;
-
-    background-size: 100%;
-
-}/* 
-=======
 }
->>>>>>> parent of a091041 (rnt)
 .greyBackground {
     background-color: gray;
     width: 50%;
@@ -418,13 +390,6 @@ a {
 .ARBookTitle {
     width: 50%;
 }
-<<<<<<< HEAD
-.bookName {
-    width: 100%;
-    opacity: 1;
-    animation: bookName 1s ease-out forwards;
-} */
-=======
 .bookSection:hover > .frontPage{
     animation: frontPage 1s ease forwards;
 }
@@ -439,22 +404,10 @@ a {
         width: 0vw;
     }
 }
->>>>>>> parent of a091041 (rnt)
 .secondPage {
     width: 0%;
     height: 15vw;
     background-color:blueviolet;
-<<<<<<< HEAD
-    animation: secondPage 1s ease-out forwards alternate;
-
-    transform: translate(0%, 0%) rotateY(90deg);
-    transform-origin: right;
-    background-size: 100%;
-}
-.bookSection:hover .cube {
-    transform: translate(-50%, 0%) rotateY(90deg);
-}
-=======
 }
 .bookSection:hover > .secondPage {
     animation: secondPage 1s ease forwards;
@@ -470,7 +423,6 @@ a {
         width: 100%;
     }
 }
->>>>>>> parent of a091041 (rnt)
 #Yettoread {
     background-color: rgb(62, 105, 114);
 }
