@@ -167,9 +167,12 @@
         </div>
         <div id="bookList">
             <div class="bookSection">
+                <div class="cube"></div>
                 <div class="frontPage">
                     <div class="greyBackground"></div>
-                    <div class="ARBookTitle">12 Rules for Life</div>
+                    <div class="ARBookTitle">
+                        <div class="bookName">12 Rules for Life</div>
+                    </div>
                 </div>
                 <div class="secondPage">
                     
@@ -275,13 +278,6 @@
         })
 
         imageSlider.style.transition = 'all 0.5s';
-
-        let bookSection = document.getElementsByClassName('bookSection')[0]
-
-        bookSection.addEventListener('click', () => {
-            bookSection.classList.add('hover')
-            console.log('good')
-        })
 
     </script>
 </body>
