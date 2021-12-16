@@ -23,7 +23,8 @@ body {
 }
 * {
     text-decoration: none;
-    color:bisque
+    color:bisque;
+    line-height: 1.5;
 }
 #notMove {
     position: fixed;
@@ -339,7 +340,7 @@ a {
 .thicCer {
     width: 80%;
     box-shadow: black 0px -50px 30px -60px inset;
-    animation: thicc 1s forwards;
+    animation: thicc 1s cubic-bezier(.8, 0, .63, .93) forwards;
 }
 .thicCer::-webkit-scrollbar {
     display: none;
@@ -347,9 +348,13 @@ a {
 @keyframes thicc {
     0% {
         height: 61%;
+        box-shadow: black 0px -30px 20px -70px inset;
+        padding: 0px, 10vw, 10px;
     }
     100% {
         height: 70%;
+        box-shadow: black 0px -50px 50px -60px inset;
+        padding: 0px, 10vw, 10px;
     }
 }
 #bookList {
@@ -361,7 +366,7 @@ a {
     margin-top: 3vw;
     gap: 6vw;
     row-gap: 2vw;
-    padding: 0px 13vw 0px 13vw;
+    padding: 0px 10vw 0px;
     overflow:hidden;
 }
 .bookSection {
@@ -481,9 +486,7 @@ a {
     height: 100%;
     background-color:lightcoral;
 
-    transform: translate(-37.5%, -275%) 
-    /* rotateX(-90deg)  */
-    rotate(-90deg);
+    transform: translate(-37.5%, -275%) rotate(-90deg);
     transform-origin: top;
     background-size: 100%;
 }
@@ -498,14 +501,17 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1vw;
     color: black;
-    /* transition: all .5s; */
+    margin-top: .5vw;
+}
+.margintop {
+    margin-top: 1vw;
 }
 #moreBooks:hover {
     background-color: rgb(51, 48, 48);
     color: bisque;
 }
+
 /*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     Yet to Read 부분 
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*/
@@ -514,13 +520,17 @@ a {
     font-size: xx-large;
     text-align: center;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .bothHalves {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 70%
+    height: 80%;
+    gap: 2vw;
 }
 .rightHalf {
     width: 45%;
@@ -530,10 +540,80 @@ a {
     flex-direction: column; 
     justify-content: space-between;
 }
+#line {
+    height: 90%;
+    width: 1px;
+    background: bisque;
+    border-radius: 1px;
+}
 .leftHalf {
     width: 45%;
     height: 90%;
-    background-color:darkblue;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:flex-end;
+}
+.readingBooks {
+    width: 48%;
+    height: 48%;
+    margin-left: 10px;
+}
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#boxContainer {
+    position: absolute;
+    top: calc(14% + 1px);
+    right: calc(33% - 1px);
+    width: 35%;
+    height: calc(95% + 1px);
+    /* background: bisque */
+    background-image: url(./나무\ 무늬.jpeg);
+    /* background-size: 100%; */
+    transform: rotate(90deg);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.readingNow {
+    width: 45%;
+    height: 84%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 2;
+}
+#readingfirst {
+    background-image: url(./crime\ and\ punishment.jpeg);
+    position: absolute;
+    top: 5%;
+}
+#readingsecond {
+    background-image: url(./에코랄리아스.jpeg);
+    position: absolute;
+    top: 7%;
+}
+.trapezoid {
+    position: absolute;
+    bottom: 11%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    border-bottom: 30px solid rgb(219, 196, 158);
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    width: 80%;
+    z-index: 1;
+}
+.boxw {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 5%;
+    background:burlywood;
+    box-shadow: black 0px 13px 30px 0px;
 }
 .comment {
     width: 100%;
@@ -571,6 +651,7 @@ form {
     color: black;
     border-radius: 2em .5em .5em 2em;
     outline: none;
+    text-indent: 10px;
 }
 .upArrowContainer {
     width: 10%;
@@ -586,6 +667,10 @@ form {
 .upArrow:after {
     content: ' \21E7';
 }
-#Yettoread {
+#YettoRead {
     background-color: rgb(62, 105, 114);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }

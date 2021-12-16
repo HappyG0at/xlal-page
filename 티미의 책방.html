@@ -380,9 +380,41 @@
             </div>
         </div>
         <div class="bothHalves">
-            <div class="leftHalf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas obcaecati rem
-                accusamus! Natus pariatur nostrum necessitatibus assumenda eligendi exercitationem eum dignissimos odio
-                ab. Commodi, quibusdam in libero veniam debitis consectetur.</div>
+            <div class="leftHalf">
+                <div class="readingBooks one">
+                    <div class="container">
+                        <div id="boxContainer"></div>
+                        <div class="readingNow" id="readingfirst"></div>
+                        <div class="trapezoid"></div>
+                        <div class="boxw"></div>
+                    </div>
+                </div>
+                <div class="readingBooks two">
+                    <div class="container">
+                        <div id="boxContainer"></div>
+                        <div class="readingNow" id="readingsecond"></div>
+                        <div class="trapezoid"></div>
+                        <div class="boxw"></div>
+                    </div>
+                </div>
+                <div class="readingBooks third">
+                    <div class="container">
+                        <div id="boxContainer"></div>
+
+                        <div class="trapezoid"></div>
+                        <div class="boxw"></div>
+                    </div>
+                </div>
+                <div class="readingBooks four">
+                    <div class="container">
+                        <div id="boxContainer"></div>
+
+                        <div class="trapezoid"></div>
+                        <div class="boxw"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="line"></div>
             <div class="rightHalf">
                 <div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis rerum reiciendis
                     enim saepe praesentium consectetur nesciunt provident non expedita? Non velit voluptatem molestias
@@ -408,76 +440,6 @@
         <div class="BBTitle">About 티미</div>
     </div>
     <script>
-        var Step = 0;
-        let next = document.getElementsByClassName('next')[0]
-        let prev = document.getElementsByClassName('prev')[0]
-        let imageSlider = document.getElementById('imageSlider')
-        let carousel = document.getElementById('carousel')
-
-        console.log(Step)
-
-        carousel.addEventListener('scroll', () => {
-            console.log('scrolled')
-            let scrolled = carousel.scrollWidth
-            console.log(scrolled)
-
-            document.getElementsByClassName('alert')[0].classList.add('hidden')
-            document.getElementsByClassName('alert')[1].classList.add('hidden')
-            document.getElementsByClassName('alert')[2].classList.add('hidden')
-
-            if (scrolled == 1389) {
-                Step = -100;
-                console.log(currentPage)
-                console.log(Step)
-            } else if (scrolled == 2778) {
-                Step = -200;
-                console.log(currentPage)
-                console.log(Step)
-            } else if (scrolled == 0) {
-                Step = 0;
-                console.log(currentPage)
-                console.log(Step)
-            }
-        })
-
-        next.addEventListener('click', function () {
-
-            console.log("starts at " + Step)
-
-            if (Step > -200) {
-                Step -= 100;
-                console.log(Step)
-            } else {
-                console.log('yes')
-                console.log(Step)
-                Step = 0;
-                scrolled = 0
-            }
-            imageSlider.style.transform = 'translate(' + Step + 'vw)';
-
-
-            console.log("ends at " + Step)
-        })
-
-        prev.addEventListener('click', function () {
-
-            console.log("starts at " + currentPage)
-            currentPage;
-
-            if (Step < 0) {
-                Step += 100;
-                console.log(Step)
-            } else {
-                Step = -200;
-                scrolled = 0
-            }
-            imageSlider.style.transform = 'translate(' + Step + 'vw)';
-
-            console.log("ends at " + currentPage)
-        })
-
-        imageSlider.style.transition = 'all 0.5s';
-
         let moreshu = document.getElementById('moreBooks')
         let bookList = document.getElementById('bookList')
         let AlreadyRead = document.getElementById('AlreadyRead')
@@ -485,18 +447,17 @@
 
 
         moreshu.addEventListener('click', () => {
-            bookList.style.padding = '0px 0px 10px 0px';
+            bookList.style.padding = '0px 0px';
             bookList.style.overflow = 'scroll';
             bookList.classList.add('thicCer');
-            // moreBooks.style.
         })
 
         const form = document.querySelector('form')
         const upArrowContainer = document.getElementsByClassName('upArrowContainer')[0]
-        const deletecomment =document.getElementsByClassName('deletecomment')[0]
+        const deletecomment = document.getElementsByClassName('deletecomment')[0]
         const input = document.getElementById('input')
         const commented = document.getElementById('commented')
-        let itemsArray = localStorage.getItem('items')?JSON.parse(localStorage.getItem('items')):[];
+        let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
         localStorage.setItem('items', JSON.stringify(itemsArray))
         const data = JSON.parse(localStorage.getItem('items'))
@@ -522,7 +483,7 @@
                 }
             }
         })
-        upArrowContainer.addEventListener('click', function(e) {
+        upArrowContainer.addEventListener('click', function (e) {
             e.preventDefault();
             itemsArray.push(input.value)
             localStorage.setItem('items', JSON.stringify(itemsArray))
