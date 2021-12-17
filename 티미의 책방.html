@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./티미책방JS.js">
 </head>
 <!-- <div class="test" style="height: 11vh;"></div> -->
 
@@ -370,7 +369,8 @@
                 </div>
             </div>
         </div>
-        <div id="moreBooks" class="moreBooksBefore"></div>
+        <div id="moreBook">더 보기</div>
+        <!-- <div id="moreBooks">줄이기</div> -->
     </div>
     <div class="bigBoxes" id="YettoRead">
         <div class="BBwords">
@@ -456,7 +456,8 @@
 
         // 더 보기 누르면 => 아래 스크롤
 
-        let moreshu = document.getElementById('moreBooks')
+        let moreshu = document.getElementById('moreBook')
+        // let moreshus = document.getElementById('moreBooks')
         let bookList = document.getElementById('bookList')
         let AlreadyRead = document.getElementById('AlreadyRead')
         let moreBooks = document.getElementById('moreBooks')
@@ -466,13 +467,12 @@
             bookList.style.padding = '0px 0px';
             bookList.style.overflow = 'scroll';
             bookList.classList.add('thicCer');
-            // moreshu.style.breakBefore = ""
-            event.target.setAttribute('더 보기', 'anything');
+            // event.target.setAttribute('더 보기', 'anything');
+            // moreshu.style.display = 'none'
+            moreshu.innerHTML = "줄이기"
+            // moreshu.write("줄이기");
+            // console.log(moreshu.write("줄이기"))
         })
-
-        graphEle.addEventListener('click', function (event) {
-            
-        });
 
         // 클릭하면 추천 책 화면
 

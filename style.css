@@ -53,19 +53,20 @@ a {
     width: 3.5vw;
     margin-right: .3em;
 }
-.info4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 10vw;
-}
 #mainInfo {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 40vw;
+}
+.info4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 10vw;
+    transition:all .5s infinite forwards;
 }
 .infohover {
     display: flex;
@@ -393,7 +394,6 @@ a {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: flex;
     justify-content: center;
     align-items: center;
     animation: frontPage 1s ease-out forwards alternate;
@@ -486,27 +486,34 @@ a {
 .cubeInfo {
     width: 90%;
 }
-#moreBooks {
+#moreBook {
+    /* display: none; */
     height: 3vw;
     width: 100px;
     border-radius: 3em;
     background-color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: .5vw;
+}
+#moreBooks {
+    /* display: none; */
+    height: 3vw;
+    width: 100px;
+    border-radius: 3em;
+    background-color: white;
     color: black;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
     margin-top: .5vw;
 }
 .margintop {
     margin-top: 1vw;
 }
-.moreBooksBefore {
-    content: '\더 보기';
-}
-#moreBooks:target{
-    content: '\줄이기';
-}
-#moreBooks:hover {
+#moreBook:hover {
     background-color: rgb(51, 48, 48);
     color: bisque;
     transition: all .5s;
