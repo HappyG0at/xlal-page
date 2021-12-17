@@ -40,7 +40,7 @@ body {
     padding-left: 5vw;
     padding-right: 5vw;
     box-shadow: 0 5px 10px rgb(0, 0, 0, .5);
-    z-index: 1;
+    z-index: 3;
 }
 #title {
     font-size: xx-large;
@@ -330,7 +330,6 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 1s;
 }
 #AlreadyRead .BBTitle {
     font-size: xx-large;
@@ -347,18 +346,20 @@ a {
 }
 @keyframes thicc {
     0% {
-        height: 61%;
+        height: 63%;
         box-shadow: black 0px -30px 20px -70px inset;
         padding: 0px, 10vw, 10px;
+        margin-top: 3vw;
     }
     100% {
         height: 70%;
         box-shadow: black 0px -50px 50px -60px inset;
         padding: 0px, 10vw, 10px;
+        margin-top: 2vw;
     }
 }
 #bookList {
-    height: 61%;
+    height: 63%;
     display: flex;
     flex-wrap:wrap;
     align-items: center;
@@ -482,14 +483,6 @@ a {
     align-items: center;
     justify-content:space-evenly;
 }
-.thirdPage {
-    height: 100%;
-    background-color:lightcoral;
-
-    transform: translate(-37.5%, -275%) rotate(-90deg);
-    transform-origin: top;
-    background-size: 100%;
-}
 .cubeInfo {
     width: 90%;
 }
@@ -507,9 +500,16 @@ a {
 .margintop {
     margin-top: 1vw;
 }
+.moreBooksBefore {
+    content: '\더 보기';
+}
+#moreBooks:target{
+    content: '\줄이기';
+}
 #moreBooks:hover {
     background-color: rgb(51, 48, 48);
     color: bisque;
+    transition: all .5s;
 }
 
 /*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
@@ -523,6 +523,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* position:absolute; */
 }
 .bothHalves {
     display: flex;
@@ -531,20 +532,6 @@ a {
     width: 100%;
     height: 80%;
     gap: 2vw;
-}
-.rightHalf {
-    width: 45%;
-    height: 90%;
-    background-color: coral;
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between;
-}
-#line {
-    height: 90%;
-    width: 1px;
-    background: bisque;
-    border-radius: 1px;
 }
 .leftHalf {
     width: 45%;
@@ -568,16 +555,17 @@ a {
 }
 #boxContainer {
     position: absolute;
-    top: calc(14% + 1px);
-    right: calc(33% - 1px);
+    top: calc(15% + 0px);
+    /* right: calc(50% - 1px); */
     width: 35%;
     height: calc(95% + 1px);
     /* background: bisque */
-    background-image: url(./나무\ 무늬.jpeg);
+    /* background-image: url(./나무\ 무늬.jpeg); */
+    background-color: transparent;
     /* background-size: 100%; */
     transform: rotate(90deg);
     background-repeat: no-repeat;
-    z-index: 1;
+    z-index: 1
 }
 .readingNow {
     width: 45%;
@@ -598,12 +586,10 @@ a {
 }
 .trapezoid {
     position: absolute;
-    bottom: 11%;
-    right: 50%;
-    transform: translate(50%, 50%);
+    bottom: calc(5% + 1px);
     border-bottom: 30px solid rgb(219, 196, 158);
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
+    border-left: calc(2vw + 2px) solid transparent;
+    border-right: calc(2vw + 2px) solid transparent;
     width: 80%;
     z-index: 1;
 }
@@ -614,6 +600,95 @@ a {
     height: 5%;
     background:burlywood;
     box-shadow: black 0px 13px 30px 0px;
+}
+#line {
+    height: 90%;
+    width: 1px;
+    background: bisque;
+    border-radius: 1px;
+}
+.rightHalf {
+    width: 45%;
+    height: 90%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.rightTopHalf {
+    height: calc(100% - 2.5em);
+    border-radius: 0px 0px 1em 1em;
+    background-color: gray;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.commentbtn {
+    width: 100%;
+    height: 2em;
+    background-color: darkcyan;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.comment:click {
+    background-color: blue;
+}
+.greyscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.75);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes commentpop {
+    0% {
+        background-color:rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color:rgba(0, 0, 0, 0.75);
+    }
+}
+.twocomment {
+    width: 50%;
+    height: 80%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+@keyframes commentRight {
+    0% {
+        opacity: 0;
+        right: -100%;
+    }
+    100% {
+        opacity: 1;
+        right: 0%;
+    }
+}
+#commented {
+    overflow:scroll;
+    padding: 1em 2em;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    margin-bottom: .5em;
+    background-color: rgb(48, 82, 88);
+    border-radius: 0px 0px 1em 1em;
+}
+li {
+    border-bottom: rgba(0, 0, 0, .3) 1px solid;
+    padding: 1em;
 }
 .comment {
     width: 100%;
@@ -633,7 +708,7 @@ a {
     position: absolute;
     left: .5%;
     background-image: url(./image-removebg-preview-7.png);
-    background-size: 70%;
+    background-size: 60%;
     background-repeat: no-repeat;
     background-position: center 20%;
 }
@@ -650,22 +725,22 @@ form {
     height: calc(2em);
     color: black;
     border-radius: 2em .5em .5em 2em;
-    outline: none;
     text-indent: 10px;
 }
 .upArrowContainer {
     width: 10%;
     height: calc(2em - 5px);
     border-radius: .5em 2em 2em .5em;
-    background-color: darkgoldenrod;
+    background-color: bisque;
     position: absolute;
     right: .5%;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
-.upArrow:after {
-    content: ' \21E7';
+.upArrow {
+    height: 1.3em;
+    color: black;
+    margin-left: 1.1vh;
 }
 #YettoRead {
     background-color: rgb(62, 105, 114);
