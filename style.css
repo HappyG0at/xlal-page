@@ -307,19 +307,35 @@ a {
     font-size: xx-large;
     text-align: center;
 }
-.hiddenContent {
+.hiddenContent1 {
     text-align: center;
     width: 20vw;
     opacity: 0;
     transition: all .5s;
 }
-.three:hover .hiddenContent {
+.hiddenContent2 {
+    text-align: center;
+    width: 20vw;
+    opacity: 0;
+    transition: all .5s;
+}
+.hiddenContent3 {
+    text-align: center;
+    width: 20vw;
+    opacity: 0;
+    transition: all .5s;
+}
+.three:hover .hiddenContent1 {
     opacity: 1;
     margin-top: 3vw;
 }
-
-.three:hover .hiddenContent::after {
-    content: 'loremfjdisljf d jfdisj foejoi fndios fnoeiwnf ineouiwne fneow nfenwiojf d fjeow cnjdnviuodsucndosanioe ij j  fjoiejwc ';
+.three:hover .hiddenContent2 {
+    opacity: 1;
+    margin-top: 3vw;
+}
+.three:hover .hiddenContent3 {
+    opacity: 1;
+    margin-top: 3vw;
 }
 
 /*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
@@ -339,7 +355,6 @@ a {
 }
 .thicCer {
     width: 80%;
-    box-shadow: black 0px -50px 30px -60px inset;
     animation: thicc 1s cubic-bezier(.8, 0, .63, .93) forwards;
 }
 .thicCer::-webkit-scrollbar {
@@ -347,7 +362,7 @@ a {
 }
 @keyframes thicc {
     0% {
-        height: 63%;
+        height: 62%;
         box-shadow: black 0px -30px 20px -70px inset;
         padding: 0px, 10vw, 10px;
         margin-top: 3vw;
@@ -359,8 +374,26 @@ a {
         margin-top: 2vw;
     }
 }
+.thinner {
+    width: 80%;
+    animation: thinner 1s cubic-bezier(.8, 0, .63, .93) forwards;
+}
+@keyframes thinner {
+    0% {
+        height: 70%;
+        box-shadow: black 0px -50px 50px -60px inset;
+        padding: 0px, 10vw, 10px;
+        margin-top: 2vw;
+    }
+    100% {
+        height: 62%;
+        box-shadow: black 0px -30px 20px -70px inset;
+        padding: 0px, 10vw, 10px;
+        margin-top: 3vw;
+    }
+}
 #bookList {
-    height: 63%;
+    height: 62%;
     display: flex;
     flex-wrap:wrap;
     align-items: center;
@@ -421,6 +454,16 @@ a {
     background-size:cover;
     opacity: .9;
 }
+#img1 {
+    display: none;
+    position: fixed;
+    top: 45%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    background-image: url(./Screen\ Shot\ 2021-12-20\ at\ 12.12.24\ PM.png);
+    width: 40vw;
+    z-index: 5;
+}
 .bookCover2 {
     height: 90%;
     width: 90%;
@@ -467,6 +510,33 @@ a {
     background-size:cover;
     opacity: .9;
 }
+.bookCover7 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./실행이답이다.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover8 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./자유로운.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover9 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./열정.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
 .ARBookTitle {
     width: 50%;
 }
@@ -482,30 +552,38 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content:space-evenly;
+
+    position: relative;
 }
-.cubeInfo {
-    width: 90%;
-}
-#moreBook {
-    /* display: none; */
-    height: 3vw;
-    width: 100px;
+.readreview {
+    position: absolute;
+    bottom: 5%;
+    right: 50%;
+    transform: translate(50%, 0%);
+    height: 2.5vw;
+    width: 6vw;
     border-radius: 3em;
     background-color: white;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: .5vw;
 }
-#moreBooks {
-    /* display: none; */
+.readreview:hover {
+    background-color: rgb(51, 48, 48);
+    color: bisque;
+    transition: all .5s;
+}
+.cubeInfo {
+    width: 90%;
+}
+#moreBook {
     height: 3vw;
     width: 100px;
     border-radius: 3em;
     background-color: white;
     color: black;
-    /* display: flex; */
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: .5vw;
@@ -517,6 +595,16 @@ a {
     background-color: rgb(51, 48, 48);
     color: bisque;
     transition: all .5s;
+}
+.greyscreenReview {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.75);
 }
 
 /*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
