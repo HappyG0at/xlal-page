@@ -49,6 +49,11 @@ a {
     display: flex;
     align-items: center;
 }
+.readreview a {
+    display: flex;
+    align-items: center;
+    color: black;
+}
 #logo {
     width: 3.5vw;
     margin-right: .3em;
@@ -552,7 +557,8 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content:space-evenly;
-
+    padding-bottom: 20%;
+    box-sizing: border-box;
     position: relative;
 }
 .readreview {
