@@ -408,32 +408,38 @@
             <div class="rightHalf">
                 <div class="rightTopHalf">
                     <div class="layer">
-                        <div class="layerSection1"></div>
-                        <div class="layerSection2"></div>
-                        <div class="layerSection3"></div>
-                        <div class="layerSection4"></div>
-                        <div class="layerSection5"></div>
-                        <div class="layerSection6"></div>
+                        <div class="qwer">
+                            <div id="layerSection01"></div>
+                            <div id="layerSection02"></div>
+                            <div id="layerSection03"></div>
+                            <div id="layerSection04"></div>
+                            <div id="layerSection05"></div>
+                            <div id="layerSection06"></div>
+                        </div>
                         <div class="shelf"></div>
                         <div class="boxq"></div>
                     </div>
                     <div class="layer">
-                        <div class="layerSection1"></div>
-                        <div class="layerSection2"></div>
-                        <div class="layerSection3"></div>
-                        <div class="layerSection4"></div>
-                        <div class="layerSection5"></div>
-                        <div class="layerSection6"></div>
+                        <div class="qwer">
+                            <div id="layerSection11"></div>
+                            <div id="layerSection12"></div>
+                            <div id="layerSection13"></div>
+                            <div id="layerSection14"></div>
+                            <div id="layerSection15"></div>
+                            <div id="layerSection16"></div>
+                        </div>
                         <div class="shelf"></div>
                         <div class="boxq"></div>
                     </div>
                     <div class="layer">
-                        <div class="layerSection1"></div>
-                        <div class="layerSection2"></div>
-                        <div class="layerSection3"></div>
-                        <div class="layerSection4"></div>
-                        <div class="layerSection5"></div>
-                        <div class="layerSection6"></div>
+                        <div class="qwer">
+                            <div id="layerSection21"></div>
+                            <div id="layerSection22"></div>
+                            <div id="layerSection23"></div>
+                            <div id="layerSection24"></div>
+                            <div id="layerSection25"></div>
+                            <div id="layerSection26"></div>
+                        </div>
                         <div class="shelf"></div>
                         <div class="boxq"></div>
                     </div>
@@ -572,47 +578,22 @@
             }
         })
 
-        const arr = {
-            "1": "layer[0].1",
-            "2": "layer[0].2",
-            "3": "layer[0].3",
-            "4": "layer[0].4",
-            "5": "layer[0].5",
-            "6": "layer[0].6",
-            "7": "layer[1].1",
-            "8": "layer[1].2",
-            "9": "layer[1].3",
-            "10": "layer[1].4",
-            "11": "layer[1].5",
-            "12": "layer[1].6",
-            "13": "layer[2].1",
-            "14": "layer[2].2",
-            "15": "layer[2].3",
-            "16": "layer[2].4",
-            "17": "layer[2].5",
-            "18": "layer[2].6"
-        }
+        // Math.floor(Math.random() * 17)
+        // // console.log(Math.floor(Math.random() * 17))
+        // console.log(typeof (Math.floor(Math.random() * 17)))
 
-        Math.floor(Math.random() * 17)
-        // console.log(Math.floor(Math.random() * 17))
-        console.log(typeof (Math.floor(Math.random() * 17)))
-
-        function reloaded() {
-            for (var i; i < 17; i++) {
-                console.log(i)
-                console.log(Math.floor(Math.random() * 17))
-            }
-        }
-        for (var i; i < 17; i++) {
-            console.log(i)
-            console.log(Math.floor(Math.random() * 17))
-            console.log(parseint(Math.floor(Math.random() * 17)))
-        }
-
-        // if (window.performance) {
-        //     console.info("window.performance works fine on this browser");
+        // function reloaded() {
+        //     for (var i; i < 17; i++) {
+        //         console.log(i)
+        //         console.log(Math.floor(Math.random() * 17))
+        //     }
         // }
-        // console.info(performance.navigation.type);
+        // for (var i; i < 17; i++) {
+        //     console.log(i)
+        //     console.log(Math.floor(Math.random() * 17))
+        //     console.log(parseint(Math.floor(Math.random() * 17)))
+        // }
+
         // if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
         //     for (var i = 0; i < 16; i++) {
         //         console.log(Math.floor(Math.random() * 16) + 1)
@@ -620,6 +601,58 @@
         // } else {
         //     console.info("This page is not reloaded");
         // }
+
+        const
+        _1 = document.getElementById('layerSection01'),
+        _2 = document.getElementById('layerSection02'),
+        _3 = document.getElementById('layerSection03'),
+        _4 = document.getElementById('layerSection04'),
+        _5 = document.getElementById('layerSection05'),
+        _6 = document.getElementById('layerSection06'),
+        _7 = document.getElementById('layerSection11'),
+        _8 = document.getElementById('layerSection12'),
+        _9 = document.getElementById('layerSection13'),
+        _10 = document.getElementById('layerSection14'),
+        _11 = document.getElementById('layerSection15'),
+        _12 = document.getElementById('layerSection16'),
+        _13 = document.getElementById('layerSection21'),
+        _14 = document.getElementById('layerSection22'),
+        _15 = document.getElementById('layerSection23'),
+        _16 = document.getElementById('layerSection24'),
+        _17 = document.getElementById('layerSection25'),
+        _18 = document.getElementById('layerSection26')
+
+        function shuffle(array) {
+            var i = array.length,
+                j = 0,
+                temp;
+
+            while (i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                // swap randomly chosen element with current element
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+
+        var ranNums = shuffle([
+            _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18
+        ]);
+
+        const bookListt = ["./앵무새 죽이기.png", "./카네기.png", "./no fucks given.jpeg", "./차라투스트라.jpeg", "./wuthering.jpeg", "ultra learning.jpeg", "./lord fly.jpeg"]
+        let a = 0;
+        for (a = 0; a < bookListt.length; a++) {
+            ranNums[a].style.backgroundImage = "url(' " + bookListt[a] + "')"; 
+            console.log(a);
+            console.log(ranNums[a]);
+        }
+
+        // moreshu.addEventListener('click', () => {
+        //     let _1 = document.getElementsByClassName('layerSection01')[0]
+        //     _1.style.backgroundColor = "red";
+        // })
 
     </script>
 </body>
