@@ -367,7 +367,7 @@ h3 {
 }
 @keyframes thicc {
     0% {
-        height: 62%;
+        height: 63%;
         box-shadow: black 0px -30px 20px -70px inset;
         padding: 0px, 10vw, 10px;
         margin-top: 3vw;
@@ -391,14 +391,14 @@ h3 {
         margin-top: 2vw;
     }
     100% {
-        height: 62%;
+        height: 63%;
         box-shadow: black 0px -30px 20px -70px inset;
         padding: 0px, 10vw, 10px;
         margin-top: 3vw;
     }
 }
 #bookList {
-    height: 62%;
+    height: 63%;
     display: flex;
     flex-wrap:wrap;
     align-items: center;
@@ -425,7 +425,7 @@ h3 {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     box-shadow: -10px 0px 10px -5px rgba(0,0,0,0.75);
 }
 .frontPage {
@@ -434,13 +434,8 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: frontPage 1s ease-out forwards alternate;
+    animation: 1s ease-out forwards alternate;
     background-color:dimgray;
-    /* box-shadow: black 0px 0px 10px 10px inset;
-    background-image: url(./KakaoTalk_Image_2021-12-14-14-11-33.jpeg);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: 0% 50%; */
 }
 .BCC {
     height: 100%;
@@ -448,7 +443,6 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: #101010; */
 }
 .bookCover1 {
     height: 90%;
@@ -458,16 +452,6 @@ h3 {
     background-repeat: no-repeat;
     background-size:cover;
     opacity: .9;
-}
-#img1 {
-    display: none;
-    position: fixed;
-    top: 45%;
-    right: 50%;
-    transform: translate(50%, 50%);
-    background-image: url(./Screen\ Shot\ 2021-12-20\ at\ 12.12.24\ PM.png);
-    width: 40vw;
-    z-index: 5;
 }
 .bookCover2 {
     height: 90%;
@@ -492,7 +476,6 @@ h3 {
     width: 90%;
     box-shadow: black 0px 0px 10px 3px;
     background-image: url(./하버드.jpeg);
-    /* background-image: url(./오만과\ 편견.jpeg); */
     background-repeat: no-repeat;
     background-size:cover;
     opacity: .9;
@@ -563,7 +546,7 @@ h3 {
 }
 .readreview {
     position: absolute;
-    bottom: 5%;
+    bottom: 8%;
     right: 50%;
     transform: translate(50%, 0%);
     height: 2.5vw;
@@ -577,6 +560,9 @@ h3 {
 }
 .readreview:hover {
     background-color: rgb(51, 48, 48);
+    transition: all .5s;
+}
+.readreview:hover > a{
     color: bisque;
     transition: all .5s;
 }
@@ -617,6 +603,13 @@ h3 {
     Yet to Read 부분 
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*/
 
+#YettoRead {
+    background-color: rgb(62, 105, 114);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
 #YettoRead .BBTitle {
     font-size: xx-large;
     text-align: center;
@@ -624,7 +617,6 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* position:absolute; */
 }
 .bothHalves {
     display: flex;
@@ -657,13 +649,9 @@ h3 {
 #boxContainer {
     position: absolute;
     top: calc(15% + 0px);
-    /* right: calc(50% - 1px); */
     width: 35%;
     height: calc(95% + 1px);
-    /* background: bisque */
-    /* background-image: url(./나무\ 무늬.jpeg); */
     background-color: transparent;
-    /* background-size: 100%; */
     transform: rotate(90deg);
     background-repeat: no-repeat;
     z-index: 1
@@ -883,10 +871,107 @@ form {
     background-size:100%;
     z-index: 1;
 }
-#YettoRead {
-    background-color: rgb(62, 105, 114);
+
+/*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    About 티미 부분 
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*/
+
+#About티미 {
+    background-color: rgb(77, 120, 129);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+#About티미 .BBTitle {
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+#leftQnA {
+    height: 90%;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.pic_ {
+    background-image: url(./IMG_0519.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 20vw;
+    height: 24vw;
+    box-shadow: #1a323d 0px 0px 10px 2px;
+}
+#rightQnA {
+    height: 90%;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.questions {
+    width: 80%;
+    height: 35%;
+    transition: transform .8s ease-in-out ;
+    transform-style: preserve-3d;
+}
+.questions1 {
+    width: 80%;
+    height: 35%;
+    transition: transform .8s ease-in-out ;
+    transform-style: preserve-3d;
+}
+.flip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: black 1px solid;
+    box-sizing: border-box;
+}
+.questions:hover {
+    transform: translate(0%, 0%) rotateY(90deg);
+}
+.Qnum {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 30px
+}
+.Q {
+    font-size: x-large;
+}
+.Q1 {
+    font-size: x-large;
+}
+.back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: black 1px solid;
+    box-sizing: border-box;
+    transform: translate(0%, -100%) rotateY(-90deg);
+    transform-origin:bottom;
+}
+#leaveQ {
+    font-size: x-large;
+    text-decoration: none;
+    text-align: center;
+    border: none;
 }

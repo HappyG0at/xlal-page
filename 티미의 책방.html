@@ -177,7 +177,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="img1"></div>
             </div>
             <div class="bookSection">
                 <div class="cube">
@@ -466,7 +465,60 @@
         </div>
     </div>
     <div class="bigBoxes" id="About티미">
-        <div class="BBTitle">About 티미</div>
+        <div class="BBwords">
+            <div class="BBTitle">About 티미</div>
+            <div class="bookRoomInfo">who is xlal? Who lies behind all these books? Who is this
+                'black-ink-on-white-paper' <br> hungry devourer? Nobody knows... perhaps not even himself.
+            </div>
+        </div>
+        <div class="contents">
+            <div id="leftQnA">
+                <div class="questions">
+                    <div class="flip">
+                        <div class="Qnum">Q1</div>
+                        <div class="Q">티미는 누구인가?</div>
+                    </div>
+                    <div class="back">
+                        <div class="Qnum">A1</div>
+                        <div class="Q">티미는 알려지고 싶지 않다.</div>
+                    </div>
+                </div>
+                <div class="questions">
+                    <div class="flip">
+                        <div class="Qnum">Q2</div>
+                        <div class="Q">왜 책인가?</div>
+                    </div>
+                    <div class="back">
+                        <div class="Qnum">A2</div>
+                        <div class="Q">아니면 뭐가 있나?</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pic_"></div>
+            <div id="rightQnA">
+                <div class="questions">
+                    <div class="flip">
+                        <div class="Qnum">Q3</div>
+                        <div class="Q">왜 착방을 만들었는가?</div>
+                    </div>
+                    <div class="back">
+                        <div class="Qnum">A3</div>
+                        <div class="Q">책 보관 안 하나?</div>
+                    </div>
+                </div>
+                <div class="questions1">
+                    <div class="flip">
+                        <div class="Qnum">Q4</div>
+                        <div class="Q1"></div>
+                        <input type="text" id="leaveQ" style="background-color: inherit;" placeholder="leave a Question">
+                    </div>
+                    <!-- <div class="back">
+                        <div class="Qnum">A4</div>
+                        <div class="Q">barely functioning</div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
     </div>
     <script>
 
@@ -543,7 +595,7 @@
         }
 
 
-        document.addEventListener('keydown', (event) => {
+        input.addEventListener('keydown', (event) => {
             if (event.keyCode == 13) {
                 event.preventDefault();
                 var el = document.activeElement;
@@ -603,24 +655,24 @@
         // }
 
         const
-        _1 = document.getElementById('layerSection01'),
-        _2 = document.getElementById('layerSection02'),
-        _3 = document.getElementById('layerSection03'),
-        _4 = document.getElementById('layerSection04'),
-        _5 = document.getElementById('layerSection05'),
-        _6 = document.getElementById('layerSection06'),
-        _7 = document.getElementById('layerSection11'),
-        _8 = document.getElementById('layerSection12'),
-        _9 = document.getElementById('layerSection13'),
-        _10 = document.getElementById('layerSection14'),
-        _11 = document.getElementById('layerSection15'),
-        _12 = document.getElementById('layerSection16'),
-        _13 = document.getElementById('layerSection21'),
-        _14 = document.getElementById('layerSection22'),
-        _15 = document.getElementById('layerSection23'),
-        _16 = document.getElementById('layerSection24'),
-        _17 = document.getElementById('layerSection25'),
-        _18 = document.getElementById('layerSection26')
+            _1 = document.getElementById('layerSection01'),
+            _2 = document.getElementById('layerSection02'),
+            _3 = document.getElementById('layerSection03'),
+            _4 = document.getElementById('layerSection04'),
+            _5 = document.getElementById('layerSection05'),
+            _6 = document.getElementById('layerSection06'),
+            _7 = document.getElementById('layerSection11'),
+            _8 = document.getElementById('layerSection12'),
+            _9 = document.getElementById('layerSection13'),
+            _10 = document.getElementById('layerSection14'),
+            _11 = document.getElementById('layerSection15'),
+            _12 = document.getElementById('layerSection16'),
+            _13 = document.getElementById('layerSection21'),
+            _14 = document.getElementById('layerSection22'),
+            _15 = document.getElementById('layerSection23'),
+            _16 = document.getElementById('layerSection24'),
+            _17 = document.getElementById('layerSection25'),
+            _18 = document.getElementById('layerSection26')
 
         function shuffle(array) {
             var i = array.length,
@@ -642,16 +694,40 @@
         ]);
 
         const bookListt = ["./앵무새 죽이기.png", "./카네기.png", "./no fucks given.jpeg", "./차라투스트라.jpeg", "./wuthering.jpeg", "ultra learning.jpeg", "./lord fly.jpeg"]
-        let a = 0;
-        for (a = 0; a < bookListt.length; a++) {
-            ranNums[a].style.backgroundImage = "url(' " + bookListt[a] + "')"; 
+        for (let a = 0; a < bookListt.length; a++) {
+            ranNums[a].style.backgroundImage = "url(' " + bookListt[a] + "')";
             console.log(a);
             console.log(ranNums[a]);
         }
 
-        // moreshu.addEventListener('click', () => {
-        //     let _1 = document.getElementsByClassName('layerSection01')[0]
-        //     _1.style.backgroundColor = "red";
+        // 질문 달기
+
+        // const input2 = document.getElementById('leaveQ')
+        // const Q1 = document.getElementsByClassName('Q1')[0]
+        // let itemsArray2 = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+
+        // localStorage.setItem('items2', JSON.stringify(itemsArray2))
+        // const data2 = JSON.parse(localStorage.getItem('items2'))
+
+        // input2.addEventListener('keydown', (event) => {
+        //     if (event.keyCode == 13) {
+        //         event.preventDefault();
+        //         console.log('good')
+        //         var el = document.activeElement;
+        //         if (el.tagName == "INPUT") {
+        //             console.log(el.tagName)
+        //             // 제출 
+        //             itemsArray2.push(input2.value)
+        //             localStorage.setItem('items2', JSON.stringify(itemsArray2))
+        //             Q1(input2.value);
+        //             input2.value = '';
+
+        //             itemsArray.push(input.value)
+        //             localStorage.setItem('items', JSON.stringify(itemsArray))
+        //             limaker(input.value);
+        //             input.value = '';
+        //         }
+        //     }
         // })
 
     </script>
