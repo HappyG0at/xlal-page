@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <input type="text" width=200 id="inputName">
+    <input type="button" value="change to code" onclick="code()">
+
+    <div style="display: block;">
+        <div id="demo"></div>
+    </div>
+
+    <script>
+
+        const dict = {
+            "a": "p",
+            "p": "a",
+            "b": "c",
+            "c": "b",
+            "d": "w",
+            "w": "d",
+            "f": "f",
+            "f": "f",
+            "g": "k",
+            "k": "g",
+            "h": "l",
+            "l": "h",
+            "k": "u",
+            "u": "k",
+            "m": "x",
+            "x": "m",
+            "q": "v",
+            "v": "q",
+            "r": "i",
+            "i": "r",
+            "y": "j",
+            "j": "y",
+            "z": "e",
+            "e": "z",
+            "n": "t",
+            "t": "n",
+            "o": " ",
+            " ": "o",
+            "s": "s",
+            "s": "s"
+        };
+
+
+        function code(key) {
+
+            console.log('execute code function');
+
+            // input : "hello"
+
+            var inputText = document.getElementById("inputName").value;
+            // var inputText = document.getElementsByTagName(input[0]).value;
+            console.log(inputText);
+
+
+            // hello 라는 string을 한글자씩 slice
+
+            const string = inputText;
+            string.split('');
+            console.log(string.split(''));
+
+            // slice 해서 array 로 저장한다
+
+            let slicedArray = string.split('');
+            console.log(slicedArray);
+
+            // slicedArray = ['h', 'e', 'l', 'l', 'o']
+
+            // array의 개수 slicedArray.length = 5
+
+            slicedArray.length
+            console.log(slicedArray.length);
+
+            // var result = ""
+
+            let result = "";
+
+            // for i in 0...slicedArray.length-1 {  result += String(dict[slicedArray[i]])   }
+
+            let i = "";
+
+            for (i = 0; i < slicedArray.length; i++) {
+                console.log(slicedArray[i]);
+                console.log(dict[slicedArray[i]])
+                result += dict[slicedArray[i]];
+            }
+
+            console.log(result);
+
+            // output : result 
+
+            document.getElementById("demo").innerHTML += result + "<br />";
+            
+
+
+            // return dict[key]
+
+        }
+
+    </script>
+</body>
+
+</html>

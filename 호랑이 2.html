@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        section {
+            border: 1px solid black;
+            height: 89vh;
+            width: 100vw;
+            scroll-snap-align: end;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<!-- <div class="test" style="height: 11vh;"></div> -->
+
+<body style="background-color: rgb(77, 120, 129); color:bisque" id="XBMain">
+    <!-- <div class="y-scroll"> -->
+    <div id="notMove">
+        <div id="title">
+            <a href="#XBMain">
+                <img src="./Screen_Shot_2021-12-14_at_5.41.58_PM-removebg-preview.png" id="logo">
+                티미의 책방
+            </a>
+        </div>
+        <div id="mainInfo">
+            <div class="info4">
+                <div class="infohover">
+                    <div class="fixed"><a href="#xlalsBooks">
+                            티미의 책방이란
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="info4">
+                <div class="infohover">
+                    <div class="fixed"><a href="#AlreadyRead">
+                            Already Read
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="info4">
+                <div class="infohover">
+                    <div class="fixed"><a href="#YettoRead">
+                            Yet to Read
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="info4">
+                <div class="infohover">
+                    <div class="fixed"><a href="#About티미">
+                            About 티미
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carousel">
+        <div id="imageSlider">
+            <div id="rotatingBooks" class=" _2">
+                <img src="./71DMt113sML.jpg" width="300px;">
+                <div id="basicBookInfo">
+                    <center>
+                        <h1>12 Rules for Life 1</h1>
+                        <h3 id="SubTitle">Sub Title</h3>
+                        <div id="oneSentenceReview">
+                            <h4>My go-to book for whenever I'm feeling disoriented.</h4>
+                        </div>
+                        <div id="buyEffect">
+                            생각 읽기
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <div id="rotatingBooks" class=" _2">
+                <img src="./71DMt113sML.jpg" width="300px;">
+                <div id="basicBookInfo">
+                    <center>
+                        <h1>12 Rules for Life 2</h1>
+                        <h3 id="SubTitle">Sub Title</h3>
+                        <div id="oneSentenceReview">
+                            <h4>one sentence review</h4>
+                        </div>
+                        <div id="buyEffect">
+                            생각 읽기
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <div id="rotatingBooks" class=" _3">
+                <img src="./71DMt113sML.jpg" width="300px;">
+                <div id="basicBookInfo">
+                    <center>
+                        <h1>12 Rules for Life 3</h1>
+                        <h3 id="SubTitle">Sub Title</h3>
+                        <div id="oneSentenceReview">
+                            <h4>one sentence review</h4>
+                        </div>
+                        <div id="buyEffect">
+                            생각 읽기
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="next"></div>
+        <div class="prev"></div>
+        <div class="alertContainer">
+            <!-- <div class="alert left"></div> -->
+            <div class="alert center">Scroll Left or Right</div>
+            <!-- <div class="alert right"></div> -->
+        </div>
+    </div>
+
+    <!-- <div id="rotatingBooks">
+            <img src="./71DMt113sML.jpg" width="300px;">
+            <div id="basicBookInfo">
+                <center>
+                    <h1>12 Rules for Life</h1>
+                    <h3 id="SubTitle">Sub Title</h3>
+                    <div id="oneSentenceReview">
+                        <h4>one sentence review</h4>
+                    </div>
+                    <div id="buyEffect">
+                        <button id="buy">
+                            <h4>구매하기</h4>
+                        </button>
+                    </div>
+                </center>
+            </div>
+        </div> -->
+
+    <div class="bigBoxes" id="xlalsBooks">
+        <div class="BBWords">
+            <h1 class="BBTitle">티미의 책방이란?</h1>
+            <div class="bookRoomInfo">내가 읽은 책들을 모셔두는 장소이다. 책의 핵심을 분석하고 책에서 던지는 질문들에 대해 <br> 나만의 답변을 구성해보고 그럴 수 없다면 책이
+                제시하는 질문에
+                대한 탐구를 위한 책방이다.</div>
+        </div>
+        <div id="threeContainer">
+            <div class="three RAS">
+                <span>Reviews and Summaries</span>
+                <div class="hiddenContent">
+                </div>
+            </div>
+            <div class="three DDIM">
+                <span>Deep Dive into Meaning</span>
+                <div class="hiddenContent">
+                </div>
+            </div>
+            <div class="three RALP">
+                <span>Reading and Learning Platform</span>
+                <div class="hiddenContent">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bigBoxes" id="AlreadyRead">
+        <div class="BBWords">
+            <h1 class="BBTitle">Already Read</h1>
+            <div class="bookRoomInfo">내가 읽은 책들을 모셔두는 장소이다. 책의 핵심을 분석하고 책에서 던지는 질문들에 대해 <br> 나만의 답변을 구성해보고 그럴 수 없다면 책이
+                제시하는 질문에
+                대한 탐구를 위한 책방이다.
+            </div>
+        </div>
+        <div id="bookList">
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover1"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            12 Rules for Life
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">My go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover2"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            카라마조프 가의 <br> 형제들
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover3"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            오만과 편견
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover4"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            하버드 상위 <br> 1%의 비밀
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover5"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            와칭
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover6"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            인생 우화
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover1"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            12 Rules for Life
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">My go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover2"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            카라마조프 가의 <br> 형제들
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover3"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            오만과 편견
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover4"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            하버드 상위 <br> 1%의 비밀
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover5"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            와칭
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookSection">
+                <div class="cube">
+                    <div class="frontPage">
+                        <div class="BCC">
+                            <div class="bookCover6"></div>
+                        </div>
+                        <div class="ARBookTitle">
+                            인생 우화
+                        </div>
+                    </div>
+                    <div class="secondPage">
+                        <div class="author">Jordan B.Peterson</div>
+                        <div class="cubeInfo">my go-to book for whenever I'm feeling disoriented.</div>
+                        <div class="readreview"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="moreBooks">더 보기</div>
+    </div>
+    <section>
+        <div id="YettoRead">
+            <div class="BBwords">
+                <div class="BBTitle">Yet to Read</div>
+                <div class="bookRoomInfo">내가 읽은 책들을 모셔두는 장소이다. 책의 핵심을 분석하고 책에서 던지는 질문들에 대해 <br> 나만의 답변을 구성해보고 그럴 수 없다면
+                    책이
+                    제시하는 질문에
+                    대한 탐구를 위한 책방이다.
+                </div>
+            </div>
+            <div class="bothHalves">
+                <div class="leftHalf">
+                    <div class="readingBooks one">
+                        <div class="container">
+                            <div id="boxContainer"></div>
+                            <div class="readingNow" id="readingfirst"></div>
+                            <div class="trapezoid"></div>
+                            <div class="boxw"></div>
+                        </div>
+                    </div>
+                    <div class="readingBooks two">
+                        <div class="container">
+                            <div id="boxContainer"></div>
+                            <div class="readingNow" id="readingsecond"></div>
+                            <div class="trapezoid"></div>
+                            <div class="boxw"></div>
+                        </div>
+                    </div>
+                    <div class="readingBooks third">
+                        <div class="container">
+                            <div id="boxContainer"></div>
+
+                            <div class="trapezoid"></div>
+                            <div class="boxw"></div>
+                        </div>
+                    </div>
+                    <div class="readingBooks four">
+                        <div class="container">
+                            <div id="boxContainer"></div>
+
+                            <div class="trapezoid"></div>
+                            <div class="boxw"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="line"></div>
+
+                <div class="rightHalf">
+                    <div class="rightTopHalf">
+                        <div class="box">
+                        </div>
+                    </div>
+                    <div class="commentbtn">
+                        Leave Recommendation for a Book
+                        <!-- <div class="viewcomment">
+                    </div>
+                    <div class="deletecomment">
+                    </div>
+                    <form>
+                        <input type="text" id="input" placeholder="recommend a Book">
+                    </form>
+                    <div class="upArrowContainer">
+                        <div class="upArrow">Send</div>
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="greyscreen">
+                <div class="twocomment">
+                    <div id="commented"></div>
+                    <div class="comment">
+                        <div class="deletecomment">
+                        </div>
+                        <form>
+                            <input type="text" id="input" placeholder="recommend a Book">
+                        </form>
+                        <div class="upArrowContainer">
+                            <div class="upArrow">Send</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="bigBoxes" id="About티미">
+        <div class="BBTitle">About 티미</div>
+    </div>
+    <script>
+
+        // 처음 스크롤 유도
+
+        carousel.addEventListener('scroll', () => {
+            document.getElementsByClassName('alert')[0].classList.add('hidden')
+        })
+
+        // 더 보기 누르면 => 아래 스크롤
+
+        let moreshu = document.getElementById('moreBooks')
+        let bookList = document.getElementById('bookList')
+        let AlreadyRead = document.getElementById('AlreadyRead')
+        let moreBooks = document.getElementById('moreBooks')
+
+
+        moreshu.addEventListener('click', () => {
+            bookList.style.padding = '0px 0px';
+            bookList.style.overflow = 'scroll';
+            bookList.classList.add('thicCer');
+        })
+
+        // 클릭하면 추천 책 화면
+
+        const commentbtn = document.getElementsByClassName('commentbtn')[0]
+        const greyscreen = document.getElementsByClassName('greyscreen')[0]
+
+        const twocomment = document.getElementsByClassName('comment')[0]
+
+        commentbtn.addEventListener('click', function () {
+            greyscreen.style.display = 'flex'
+            greyscreen.style.animation = 'commentpop 1.5s ease forwards'
+            twocomment.style.animation = 'commentRight 1.5s ease forwards'
+        })
+
+        // comment 다는 거
+
+        const form = document.querySelector('form')
+        const upArrowContainer = document.getElementsByClassName('upArrowContainer')[0]
+        const input = document.getElementById('input')
+        let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+
+        localStorage.setItem('items', JSON.stringify(itemsArray))
+        const data = JSON.parse(localStorage.getItem('items'))
+
+
+        const limaker = (text) => {
+            const li = document.createElement('li');
+            li.textContent = text;
+            commented.appendChild(li);
+        }
+
+
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                var el = document.activeElement;
+                if (el.tagName == "INPUT") {
+                    // 제출 
+                    itemsArray.push(input.value)
+                    localStorage.setItem('items', JSON.stringify(itemsArray))
+                    limaker(input.value);
+                    input.value = '';
+                }
+            }
+        })
+        upArrowContainer.addEventListener('click', function (e) {
+            e.preventDefault();
+            itemsArray.push(input.value)
+            localStorage.setItem('items', JSON.stringify(itemsArray))
+            limaker(input.value);
+            input.value = '';
+        })
+
+        data.forEach(item => {
+            limaker(item)
+        })
+
+        let deletecomment = document.getElementsByClassName('deletecomment')[0]
+
+        deletecomment.addEventListener('click', function () {
+            alert('good')
+            localStorage.clear();
+            console.log(localStorage.clear())
+            while (commented.firstChild) {
+                commented.removeChild(commented.firstChild)
+            }
+        })
+    </script>
+</body>

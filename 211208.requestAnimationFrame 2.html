@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>requestAnimationFrame</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        	html {
+        		height: 100%;
+        	}
+        	body {
+        		display: flex;
+        		align-items: center;
+        		justify-content: center;
+        		height: 100%;
+        		margin: auto;
+        	}
+        	.book {
+        		position: absolute;
+        		width: 100px;
+        		left: 50%;
+        		bottom: 0;
+        		margin-left: -50px;
+        	}
+        	.value {
+                bottom: 0;
+                position: absolute;
+        		font-size: 7rem;
+        		font-weight: 100;
+        		text-align:left;
+        	}
+        </style>
+    </head>
+
+    <body>
+        <img class="book" src="./71DMt113sML.jpg" alt="로켓에 탑승한 일분이">
+        <div class="value"></div>
+
+        <script>
+        	const book = document.querySelector('.book');
+        	const value = document.querySelector('.value');
+        	let yPos = 0;
+        	let rafId;
+
+        	function render() {
+        		value.innerHTML = yPos;
+        		book.style.transform = `translateY(${-yPos}px)`;
+                value.style.transform = `translateY(${-yPos}px)`;
+        		yPos += 1;
+
+        		rafId = requestAnimationFrame(render);
+
+        		if (yPos > 700) {
+        			cancelAnimationFrame(rafId);
+        		}
+
+                if (yPos > 40) {
+                    yPos += 2;
+                }
+                if (yPos > 200) {
+                    yPos += 3;
+                }
+                if (yPos > 500) {
+                    yPos += 4;
+                }
+        	}
+
+        	render();
+
+        	book.addEventListener('mouseover', () => {
+        		cancelAnimationFrame(rafId);
+        	});
+        </script>
+    </body>
+</html>

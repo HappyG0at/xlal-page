@@ -1,0 +1,977 @@
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    
+}
+@font-face {
+    font-family: 'KHNPHD';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KHNPHD.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'KHNPHD';
+    margin: 0px;
+    scroll-snap-type: y mandatory;
+}
+.y-scroll::-webkit-scrollbar {
+    display: none;
+}
+* {
+    text-decoration: none;
+    color:bisque;
+    line-height: 1.5;
+}
+#notMove {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 11vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(77, 120, 129);
+    align-items: center;
+    justify-content:space-between;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, .5);
+    z-index: 3;
+}
+#title {
+    font-size: xx-large;
+}
+a {
+    display: flex;
+    align-items: center;
+}
+.readreview a {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+#logo {
+    width: 3.5vw;
+    margin-right: .3em;
+    box-shadow: none;
+}
+#mainInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 40vw;
+}
+.info4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 10vw;
+    transition:all .5s infinite forwards;
+}
+.infohover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.fixed {
+    position: fixed;
+}
+.infohover:hover {
+    animation: hover .5s forwards;
+}
+@keyframes hover {
+    0% {
+        background-color: azure;
+        width: 0%;
+    }
+    100% {
+        background-color:rgb(8, 74, 87);
+        width:100%;
+    }
+}
+.bigBoxes {
+    border: 1px solid black;
+    height: 89vh;
+    width: 100vw;
+    scroll-snap-align: end;
+    box-sizing: border-box;
+}
+
+/*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    carousel 부분 
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*/
+
+#carousel {
+    width: 100%;
+    height: 89vh;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    scroll-snap-align:center;
+}
+#carousel::-webkit-scrollbar {
+    display: none;
+}
+.alert {
+    font-size: x-large;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 81%;
+    right: 50%;
+    transform: translate(50%, 50%);
+}
+.hidden {
+    animation: _hide 1s forwards;
+}
+@keyframes _hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+.alert::after {
+    content: '\21D2';
+    margin: 0px 0px 0px 10px;
+
+}
+.alert::before {
+    content: '\21D0';
+    margin: 3px 10px 0px 0px;
+}
+#imageSlider {
+    width: 300%;
+    display: flex;
+    transition: all 0.5s;
+    flex-shrink: 0;
+}
+#rotatingBooks {
+    width: 100vw;
+    margin-top: 11vh;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-image: url(a1c06f28469a4bd9a72f65c49cc663cf.jpeg);
+    background-size:111%;
+    background-position: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+}
+img {
+    box-shadow: 
+    /* rgb(201, 180, 155) */
+    /* black */
+    #454545
+     0px 0px 10px 5px;
+}
+#SubTitle {
+    /* margin-bottom: 50px; */
+    text-align: center;
+}
+
+#oneSentenceReview {
+    border-left: 1px solid white;
+    border-Right: 1px solid white;
+    padding: 15px;
+    text-align: center;
+}
+
+#basicBookInfo {
+    margin-left: 20px;
+    /* padding: 2vw 0vw; */
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+h1 {
+    margin: 0;
+    text-align: center;
+}
+h3 {
+    margin: 0;
+}
+#buyEffect {
+    height: 3vw;
+    width: 100px;
+    color: black;
+    background-color: white;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+#buyEffect:hover {
+    background-color: rgb(51, 48, 48);
+    color: bisque; 
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    
+    color: black;
+    background-color: white;
+    
+}
+#menu button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* 걍 추가해야됨 묻지마셈 */
+
+.BBTitle {
+    font-size: xx-large;
+    text-align: center;
+    margin: 0px;
+}
+
+/*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    xlalsBooks 부분 
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*/
+
+#xlalsBooks {
+    background-color: rgb(62, 105, 114);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#xlalsBooks .BBWords {
+    margin-bottom: 6vw;;
+}
+#xlalsBooks .BBTitle {
+    font-size: xx-large;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.bookRoomInfo {
+    text-align: center;
+}
+#threeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height: 25vw;
+}
+.RAS {
+    background-color:rgb(185, 134, 71)
+}
+.DDIM {
+    background-color:rgb(161, 111, 49)
+}
+.RALP {
+    background-color:rgb(185, 134, 71);
+}
+.three {
+    width: 20vw;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    transition: all .5s;
+    position: relative;
+}
+.three:hover {
+    width: 25vw;
+    height: 25vw;
+    background-color: rgba(38, 38, 38);
+}
+.three span {
+    width: 20vw;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    transition: all .5s;
+    font-size: xx-large;
+    text-align: center;
+}
+.three:hover span {
+    transform: translate(50%, -100%);
+}
+.hiddenContent1 {
+    text-align: center;
+    width: 20vw;
+    opacity: 0;
+    transition: .5s;
+}
+.hiddenContent2 {
+    text-align: center;
+    width: 20vw;
+    opacity: 0;
+    transition: .5s;
+}
+.hiddenContent3 {
+    text-align: center;
+    width: 20vw;
+    opacity: 0;
+    transition: .5s;
+}
+.three:hover .hiddenContent1 {
+    opacity: 1;
+    margin-top: 9vw;
+}
+.three:hover .hiddenContent2 {
+    opacity: 1;
+    margin-top: 9vw;
+}
+.three:hover .hiddenContent3 {
+    opacity: 1;
+    margin-top: 9vw;
+}
+
+/*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    Already Read 부분 
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*/
+
+#AlreadyRead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#AlreadyRead .BBTitle {
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.thicCer {
+    width: 80%;
+    animation: thicc 1s cubic-bezier(.8, 0, .63, .93) forwards;
+}
+.thicCer::-webkit-scrollbar {
+    display: none;
+}
+@keyframes thicc {
+    0% {
+        height: 63%;
+        box-shadow: black 0px -30px 20px -70px inset;
+        padding: 0px, 10vw, 10px;
+        margin-top: 3vw;
+    }
+    100% {
+        height: 70%;
+        box-shadow: black 0px -50px 50px -60px inset;
+        padding: 0px, 10vw, 10px;
+        margin-top: 2vw;
+    }
+}
+.thinner {
+    width: 80%;
+    animation: thinner 1s cubic-bezier(.8, 0, .63, .93) forwards;
+}
+@keyframes thinner {
+    0% {
+        height: 70%;
+        box-shadow: black 0px -50px 50px -60px inset;
+        padding: 0px, 10vw, 10px;
+        margin-top: 2vw;
+    }
+    100% {
+        height: 63%;
+        box-shadow: black 0px -30px 20px -70px inset;
+        padding: 0px, 10vw, 10px;
+        margin-top: 3vw;
+    }
+}
+#bookList {
+    height: 63%;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vw;
+    gap: 6vw;
+    row-gap: 2vw;
+    padding: 0px 10vw 0px;
+    overflow:hidden;
+}
+.bookSection {
+    width: 20vw;
+    height: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: hovering 1s ease-out forwards alternate;
+}
+.bookSection:hover .cube {
+    transform: translate(50%, 0%) rotateY(90deg);
+}
+.cube {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 0.5s ease-in-out;
+    box-shadow: -10px 0px 10px -5px rgba(0,0,0,0.75);
+}
+.frontPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 1s ease-out forwards alternate;
+    background-color:dimgray;
+}
+.BCC {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bookCover1 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./12Rulesforlife.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover2 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./카라마조프\ 가의\ 형제등.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover3 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./오만과\ 편견.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover4 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./하버드.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover5 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./와칭.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover6 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./인생\ 우화.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover7 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./실행이답이다.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover8 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./자유로운.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.bookCover9 {
+    height: 90%;
+    width: 90%;
+    box-shadow: black 0px 0px 10px 3px;
+    background-image: url(./열정.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: .9;
+}
+.ARBookTitle {
+    width: 50%;
+}
+.secondPage {
+    height: 100%;
+    background-color:rgb(99, 136, 150);
+
+    transform: translate(0%, -100%) rotateY(-90deg);
+    transform-origin: right;
+    background-size: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    padding-bottom: 20%;
+    box-sizing: border-box;
+    position: relative;
+}
+.readreview {
+    position: absolute;
+    bottom: 8%;
+    right: 50%;
+    transform: translate(50%, 0%);
+    height: 2.5vw;
+    width: 6vw;
+    border-radius: 3em;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.readreview:hover {
+    background-color: rgb(51, 48, 48);
+    transition: all .5s;
+}
+.readreview:hover > a{
+    color: bisque;
+    transition: all .5s;
+}
+.cubeInfo {
+    width: 90%;
+}
+#moreBook {
+    height: 3vw;
+    width: 100px;
+    border-radius: 3em;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5vw;
+}
+.margintop {
+    margin-top: 1vw;
+}
+#moreBook:hover {
+    background-color: rgb(51, 48, 48);
+    color: bisque;
+    transition: all .5s;
+}
+.greyscreenReview {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.75);
+}
+
+/*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    Yet to Read 부분 
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*/
+
+#YettoRead {
+    background-color: rgb(62, 105, 114);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#YettoRead .BBTitle {
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bothHalves {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+    gap: 2vw;
+}
+.leftHalf {
+    width: 45%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:flex-end;
+}
+.readingBooks {
+    width: 48%;
+    height: 48%;
+    margin-left: 10px;
+}
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#boxContainer {
+    position: absolute;
+    top: calc(15% + 0px);
+    width: 35%;
+    height: calc(95% + 1px);
+    background-color: transparent;
+    transform: rotate(90deg);
+    background-repeat: no-repeat;
+    z-index: 1
+}
+.readingNow {
+    width: 45%;
+    height: 84%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 2;
+}
+#readingfirst {
+    background-image: url(./crime\ and\ punishment.jpeg);
+    position: absolute;
+    top: 5%;
+}
+#readingsecond {
+    background-image: url(./에코랄리아스.jpeg);
+    position: absolute;
+    top: 7%;
+}
+.trapezoid {
+    position: absolute;
+    bottom: calc(5% + 1px);
+    border-bottom: 30px solid rgb(219, 196, 158);
+    border-left: calc(2vw + 2px) solid transparent;
+    border-right: calc(2vw + 2px) solid transparent;
+    width: 80%;
+    z-index: 1;
+}
+.boxw {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 5%;
+    background:burlywood;
+    box-shadow: black 0px 13px 30px 0px;
+}
+#line {
+    height: 90%;
+    width: 1px;
+    background: bisque;
+    border-radius: 1px;
+}
+.rightHalf {
+    width: 45%;
+    height: 90%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.rightTopHalf {
+    height: calc(100% - 2.5em);
+    border-radius: 0px 0px 1em 1em;
+    background-color: gray;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.layer {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.qwer {
+    height: 9vw;
+    width: 100%;
+    margin-bottom: .8vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+.shelf {
+    width: calc(96% - 2px);
+    height: 3%;
+    border-bottom: 30px solid rgb(219, 196, 158);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    position: absolute;
+    bottom: calc(8% + 1px);
+}
+.boxq {
+    width: 100%;
+    height: 3%;
+    background:burlywood;
+    box-shadow: black 0px 13px 30px 0px;
+    position: absolute;
+    bottom: 5%;
+}
+.commentbtn {
+    width: 100%;
+    height: 2em;
+    background-color: darkcyan;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.greyscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.75);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes commentpop {
+    0% {
+        background-color:rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color:rgba(0, 0, 0, 0.75);
+    }
+}
+.twocomment {
+    width: 50%;
+    height: 80%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+@keyframes commentRight {
+    0% {
+        opacity: 0;
+        right: -100%;
+    }
+    100% {
+        opacity: 1;
+        right: 0%;
+    }
+}
+#commented {
+    overflow:scroll;
+    padding: 1em 2em;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    margin-bottom: .5em;
+    background-color: rgb(48, 82, 88);
+    border-radius: 1em 1em 1em 1em;
+}
+li {
+    border-bottom: rgba(0, 0, 0, .3) 1px solid;
+    padding: 1em;
+}
+.comment {
+    width: 100%;
+    height: 2em;
+    background-color: darkcyan;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.deletecomment {
+    width: 7%;
+    height: calc(2em - 5px);
+    background-color:bisque;
+    border-radius: 1em;
+    position: absolute;
+    left: .3%;
+    background-image: url(./image-removebg-preview-7.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+}
+form {
+    width: 81.5%;
+    height: calc(2em - 5px);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 7.8%;
+}
+#input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    color: black;
+    border-radius: 2em .5em .5em 2em;
+    text-indent: 10px;
+}
+.upArrowContainer {
+    width: 10%;
+    height: calc(2em - 5px);
+    border-radius: .5em 2em 2em .5em;
+    background-color: bisque;
+    position: absolute;
+    right: .3%;
+    display: flex;
+    align-items: center;
+}
+.upArrow {
+    height: 1.3em;
+    color: black;
+    margin-left: 1.1vh;
+}
+#layerSection01, #layerSection02, #layerSection03, #layerSection04, #layerSection05, #layerSection06, #layerSection11, #layerSection12, #layerSection13, #layerSection14, #layerSection15, #layerSection16, #layerSection21, #layerSection22, #layerSection23, #layerSection24, #layerSection25, #layerSection26 {
+    width: 12%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size:100%;
+    z-index: 1;
+}
+
+/*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    About 티미 부분 
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*/
+
+#About티미 {
+    background-color: rgb(77, 120, 129);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#About티미 .BBTitle {
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+#leftQnA {
+    height: 90%;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.pic_ {
+    background-image: url(./IMG_0519.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 20vw;
+    height: 24vw;
+    box-shadow: #1a323d 0px 0px 10px 2px;
+}
+#rightQnA {
+    height: 90%;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.questions {
+    width: 80%;
+    height: 35%;
+    transition: transform .8s ease-in-out ;
+    transform-style: preserve-3d;
+}
+.questions1 {
+    width: 80%;
+    height: 35%;
+    transition: transform .8s ease-in-out ;
+    transform-style: preserve-3d;
+}
+.flip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: black 1px solid;
+    box-sizing: border-box;
+}
+.questions:hover {
+    transform: translate(0%, 0%) rotateY(90deg);
+}
+.Qnum {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 30px
+}
+.Q {
+    font-size: x-large;
+}
+.Q1 {
+    font-size: x-large;
+}
+.back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: black 1px solid;
+    box-sizing: border-box;
+    transform: translate(0%, -100%) rotateY(-90deg);
+    transform-origin:bottom;
+}
+#leaveQ {
+    font-size: x-large;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+}

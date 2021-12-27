@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Voluptate reiciendis, id sequi quia unde beatae tempora illum, 
+        consectetur accusamus esse praesentium quo. Iusto explicabo voluptate vero. 
+        Blanditiis neque dignissimos totam.
+    </div>
+    <button class="btn">
+        lightmode / darkmode
+    </button>
+    <script>
+        let body = document;
+        let num = 1;
+        let big = document.getElementsByTagName('div')[0]
+
+        document.getElementsByClassName('btn')[0].addEventListener('click', function change() {
+            if (num === 1) {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                num = 2;
+            } else if (num === 2) {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                num = 1;
+            }
+        });
+
+        big.addEventListener('mouseenter', function strong() {
+           big.style.fontWeight = "700"
+        });
+
+        big.addEventListener('mouseleave', function strong() {
+           big.style.fontWeight = ""
+        });
+        
+    </script>
+</body>
+</html>

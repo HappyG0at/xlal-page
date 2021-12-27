@@ -509,8 +509,13 @@
                 <div class="questions1">
                     <div class="flip">
                         <div class="Qnum">Q4</div>
-                        <a id="google_forms" href="https://forms.gle/5ghjzm7iXKJtiqCm6" class="Q">Have a Question?</a>
+                        <div class="Q1"></div>
+                        <input type="text" id="leaveQ" style="background-color: inherit;" placeholder="leave a Question">
                     </div>
+                    <!-- <div class="back">
+                        <div class="Qnum">A4</div>
+                        <div class="Q">barely functioning</div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -558,6 +563,7 @@
         commentbtn.addEventListener('click', function () {
             greyscreen.style.display = 'flex'
             greyscreen.style.animation = 'commentpop 1s ease forwards'
+            console.log(twocomment)
             twocomment.style.display = 'flex'
             twocomment.style.animation = 'commentRight 1s ease forwards'
         })
@@ -580,6 +586,7 @@
 
         localStorage.setItem('items', JSON.stringify(itemsArray))
         const data = JSON.parse(localStorage.getItem('items'))
+
 
         const limaker = (text) => {
             const li = document.createElement('li');
@@ -617,7 +624,6 @@
 
         deletecomment.addEventListener('click', function () {
             localStorage.clear();
-
             console.log(localStorage.clear())
             while (commented.firstChild) {
                 commented.removeChild(commented.firstChild)
@@ -696,48 +702,31 @@
 
         // 질문 달기
 
-        const input2 = document.getElementById('leaveQ')
+        // const input2 = document.getElementById('leaveQ')
         // const Q1 = document.getElementsByClassName('Q1')[0]
-        let itemsArray2 = localStorage.getItem('items2') ? JSON.parse(localStorage.getItem('items2')) : [];
+        // let itemsArray2 = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
-        localStorage.setItem('items2', JSON.stringify(itemsArray2))
-        const data2 = JSON.parse(localStorage.getItem('items2'))
+        // localStorage.setItem('items2', JSON.stringify(itemsArray2))
+        // const data2 = JSON.parse(localStorage.getItem('items2'))
 
-        input2.addEventListener('keydown', (event) => {
-            if (event.keyCode == 13) {
-                event.preventDefault();
-                console.log('good')
-                console.log('great')
-                // 제출 
-                itemsArray2.push(input2.value)
-                localStorage.setItem('items2', JSON.stringify(itemsArray2))
-                input2.value = '';
+        // input2.addEventListener('keydown', (event) => {
+        //     if (event.keyCode == 13) {
+        //         event.preventDefault();
+        //         console.log('good')
+        //         var el = document.activeElement;
+        //         if (el.tagName == "INPUT") {
+        //             console.log(el.tagName)
+        //             // 제출 
+        //             itemsArray2.push(input2.value)
+        //             localStorage.setItem('items2', JSON.stringify(itemsArray2))
+        //             Q1(input2.value);
+        //             input2.value = '';
 
-
-                // }
-                console.log(itemsArray2)
-            }
-        })
-
-        console.log(itemsArray)
-        console.log(itemsArray2)
-
-        const _Q1 = (text) => {
-            const Q1 = document.getElementsByClassName('Q1')[0]
-            Q1.textContent = text;
-            // commented.appendChild(li);
-        }
-
-        data2.forEach(item => {
-            // _Q1.clear();
-            _Q1(item)
-        })
-
-        // deletecomment.addEventListener('click', function () {
-        //     localStorage.clear();
-        //     console.log(localStorage.clear())
-        //     while (commented.firstChild) {
-        //         commented.removeChild(commented.firstChild)
+        //             itemsArray.push(input.value)
+        //             localStorage.setItem('items', JSON.stringify(itemsArray))
+        //             limaker(input.value);
+        //             input.value = '';
+        //         }
         //     }
         // })
 

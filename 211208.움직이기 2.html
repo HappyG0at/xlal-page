@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .asdf {
+            display: flex;
+        }
+        .container {
+            margin-top: 100px;
+            margin-left: 100px;
+            height: 300px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* animation: watch .001s linear infinite both; */
+        }
+
+        /* .button {
+            height: 80%;
+            width: 80%;
+            background-color: cadetblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        } */
+
+        .button:hover {
+            animation: hover .5s forwards;
+        }
+
+        /* @keyframes hover {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                background-color: rgb(8, 74, 87);
+                width: 80%;
+                color: white;
+            }
+        } */
+
+        @keyframes moving {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-125px, 12px);
+            }
+
+            40% {
+                transform: translate(-28px, -72px);
+            }
+
+            60% {
+                transform: translate(93px, -25px);
+            }
+
+            80% {
+                transform: translate(5px, 100px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        .move {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            /* animation: moving .0001s linear infinite both */
+        }
+
+        @keyframes watch {
+            0% {
+                transform: translate(0);
+                transform: rotate(0deg)
+            }
+
+            /*
+
+            20% {
+                transform: translate(-25px, 25px);
+            }
+
+            40% {
+                transform: translate(-25px, -25px);
+            }
+
+            60% {
+                transform: translate(25px, -25px);
+            }
+
+            80% {
+                transform: translate(25px, 25px);
+            } */
+
+            100% {
+                transform: translate(0);
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="asdf">
+        <div class="container">
+            <div class="move">sup</div>
+            <div class="button">
+                <div class="fixed">hover over me</div>
+            </div>
+            <div class="move">sup</div>
+
+        </div>
+        <div class="container">
+            <div class="move">sup</div>
+            <div class="button">
+                <div class="fixed">hover over me</div>
+            </div>
+            <div class="move">sup</div>
+
+        </div>
+        <div class="container">
+            <div class="move">sup</div>
+            <div class="button">
+                <div class="fixed">hover over me</div>
+            </div>
+            <div class="move">sup</div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

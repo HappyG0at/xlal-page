@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="text" width=200 id="inputName" onkeydown = "if(event.keyCode == 13){code()}">
+    <input type="button" value="change to code" onclick="code()">
+
+    <div style="display: block;">
+        <div id="demo"></div>
+    </div>
+
+    <script>
+
+        const dict = {
+            "a": "p",
+            "p": "a",
+            "b": "c",
+            "c": "b",
+            "d": "w",
+            "w": "d",
+            "f": "u",
+            "u": "f",
+            "g": "k",
+            "k": "g",
+            "h": "l",
+            "l": "h",
+            "m": "x",
+            "x": "m",
+            "q": "v",
+            "v": "q",
+            "r": "i",
+            "i": "r",
+            "y": "j",
+            "j": "y",
+            "z": "e", // key : value 
+            "e": "z",
+            "n": "t",
+            "t": "n",
+            "o": " ",
+            " ": "o",
+            "s": "s",
+            "s": "s"
+        };
+
+
+        function code() {
+            document.getElementById("inputName").value.split('').length
+
+            let slicedArray = document.getElementById("inputName").value.split('');
+            console.log(slicedArray);
+
+            let result = "";
+
+            let i = "";
+            console.log(slicedArray);
+
+            for (i = 0; i < slicedArray.length; i++) {
+                console.log(i);  //0 
+                result += dict[slicedArray[i]];
+                console.log(slicedArray[i]);
+                console.log(dict[slicedArray[i]]);
+
+                // slicedArray[0] = h // dict['h'] = 'l' // result = 'l'
+            }
+
+            document.getElementById("demo").innerHTML += result + "<br />" + "<br />";
+
+            document.getElementById("inputName").value = "";
+
+        }
+
+    </script>
+</body>
+
+</html>

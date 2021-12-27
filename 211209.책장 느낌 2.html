@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+        .container {
+            height: 500px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .trapezoid {
+            position: absolute;
+            top: 75%;
+            right: 50%;
+            transform: translate(50%, 50%);
+            border-bottom: 30px solid magenta;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            width: 400px;
+        }
+        #boxContainer {
+            position: absolute;
+            top: 38%;
+            width: 400px;
+            height: 40%;
+            background: maroon;
+        }
+        .box {
+            position: absolute;
+            top: 84%;
+            width: 500px;
+            height: 5%;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="boxContainer"></div>
+        <div class="trapezoid"></div>
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>
