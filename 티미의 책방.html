@@ -624,30 +624,6 @@
             }
         })
 
-        // Math.floor(Math.random() * 17)
-        // // console.log(Math.floor(Math.random() * 17))
-        // console.log(typeof (Math.floor(Math.random() * 17)))
-
-        // function reloaded() {
-        //     for (var i; i < 17; i++) {
-        //         console.log(i)
-        //         console.log(Math.floor(Math.random() * 17))
-        //     }
-        // }
-        // for (var i; i < 17; i++) {
-        //     console.log(i)
-        //     console.log(Math.floor(Math.random() * 17))
-        //     console.log(parseint(Math.floor(Math.random() * 17)))
-        // }
-
-        // if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-        //     for (var i = 0; i < 16; i++) {
-        //         console.log(Math.floor(Math.random() * 16) + 1)
-        //     }
-        // } else {
-        //     console.info("This page is not reloaded");
-        // }
-
         const
             _1 = document.getElementById('layerSection01'),
             _2 = document.getElementById('layerSection02'),
@@ -693,53 +669,5 @@
             console.log(a);
             console.log(ranNums[a]);
         }
-
-        // 질문 달기
-
-        const input2 = document.getElementById('leaveQ')
-        // const Q1 = document.getElementsByClassName('Q1')[0]
-        let itemsArray2 = localStorage.getItem('items2') ? JSON.parse(localStorage.getItem('items2')) : [];
-
-        localStorage.setItem('items2', JSON.stringify(itemsArray2))
-        const data2 = JSON.parse(localStorage.getItem('items2'))
-
-        input2.addEventListener('keydown', (event) => {
-            if (event.keyCode == 13) {
-                event.preventDefault();
-                console.log('good')
-                console.log('great')
-                // 제출 
-                itemsArray2.push(input2.value)
-                localStorage.setItem('items2', JSON.stringify(itemsArray2))
-                input2.value = '';
-
-
-                // }
-                console.log(itemsArray2)
-            }
-        })
-
-        console.log(itemsArray)
-        console.log(itemsArray2)
-
-        const _Q1 = (text) => {
-            const Q1 = document.getElementsByClassName('Q1')[0]
-            Q1.textContent = text;
-            // commented.appendChild(li);
-        }
-
-        data2.forEach(item => {
-            // _Q1.clear();
-            _Q1(item)
-        })
-
-        // deletecomment.addEventListener('click', function () {
-        //     localStorage.clear();
-        //     console.log(localStorage.clear())
-        //     while (commented.firstChild) {
-        //         commented.removeChild(commented.firstChild)
-        //     }
-        // })
-
     </script>
 </body>

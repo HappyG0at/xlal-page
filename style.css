@@ -892,7 +892,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%;
+    height: 70%;
     width: 100%;
 }
 #leftQnA {
@@ -921,13 +921,13 @@ form {
 }
 .questions {
     width: 80%;
-    height: 35%;
+    height: 13vw;
     transition: transform .8s ease-in-out ;
     transform-style: preserve-3d;
 }
 .questions1 {
     width: 80%;
-    height: 35%;
+    height: 13vw;
     transition: transform .8s ease-in-out ;
     transform-style: preserve-3d;
 }
