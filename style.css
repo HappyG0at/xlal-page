@@ -457,7 +457,7 @@ h3 {
     height: 90%;
     width: 90%;
     box-shadow: black 0px 0px 10px 3px;
-    background-image: url(./카라마조프\ 가의\ 형제등.png);
+    background-image: url(./카라마.jpeg);
     background-repeat: no-repeat;
     background-size:cover;
     opacity: .9;
@@ -941,6 +941,7 @@ form {
     position: relative;
     border: black 1px solid;
     box-sizing: border-box;
+    text-align: center;
 }
 .questions:hover {
     transform: translate(0%, 0%) rotateY(90deg);
