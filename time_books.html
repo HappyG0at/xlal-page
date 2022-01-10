@@ -569,10 +569,10 @@
         const form = document.querySelector('form')
         const upArrowContainer = document.getElementsByClassName('upArrowContainer')[0]
         const input = document.getElementById('input')
-        let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+        let itemsArray = localStorage.getItem('recommendedBooks') ? JSON.parse(localStorage.getItem('recommendedBooks')) : [];
 
-        localStorage.setItem('items', JSON.stringify(itemsArray))
-        const data = JSON.parse(localStorage.getItem('items'))
+        localStorage.setItem('recommendedBooks', JSON.stringify(itemsArray))
+        const data = JSON.parse(localStorage.getItem('recommendedBooks'))
 
         const limaker = (text) => {
             const li = document.createElement('li');
@@ -588,7 +588,7 @@
                 if (el.tagName == "INPUT") {
                     // 제출 
                     itemsArray.push(input.value)
-                    localStorage.setItem('items', JSON.stringify(itemsArray))
+                    localStorage.setItem('recommendedBooks', JSON.stringify(itemsArray))
                     limaker(input.value);
                     input.value = '';
                 }
@@ -597,7 +597,7 @@
         upArrowContainer.addEventListener('click', function (e) {
             e.preventDefault();
             itemsArray.push(input.value)
-            localStorage.setItem('items', JSON.stringify(itemsArray))
+            localStorage.setItem('recommendedBooks', JSON.stringify(itemsArray))
             limaker(input.value);
             input.value = '';
         })
@@ -659,8 +659,6 @@
         const bookListt = ["./앵무새 죽이기.png", "./카네기.png", "./no fucks given.jpeg", "./차라투스트라.jpeg", "./wuthering.jpeg", "ultra learning.jpeg", "./lord fly.jpeg"]
         for (let a = 0; a < bookListt.length; a++) {
             ranNums[a].style.backgroundImage = "url(' " + bookListt[a] + "')";
-            console.log(a);
-            console.log(ranNums[a]);
         }
     </script>
 </body>
